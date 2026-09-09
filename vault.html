@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EMAIL LIST RESCUE CAMPAIGN VAULT · The Rescue Squad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* scene : un moniteur de suivi qui repasse en vert vif après un tracé plat, en pleine nuit */
+  --bg: oklch(0.15 0.02 145);
+  --bg2: oklch(0.18 0.024 145);
+  --ink: oklch(0.94 0.01 130);
+  --muted: oklch(0.62 0.02 140);
+  --accent: oklch(0.88 0.23 125);     /* seul accent engagé : le néon, réservé au Vault */
+  --accent2: oklch(0.68 0.23 355);
+  --line: oklch(0.30 0.02 145);
+  --disp:'Bricolage Grotesque',sans-serif;
+  --sans:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
+body::before{
+  content:'';position:fixed;inset:-20%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(40% 35% at 22% 20%, oklch(0.28 0.12 125/.4), transparent 70%),
+    radial-gradient(35% 40% at 80% 70%, oklch(0.24 0.06 145/.35), transparent 70%),
+    radial-gradient(30% 30% at 60% 10%, oklch(0.22 0.04 145/.4), transparent 70%);
+  animation:mesh 26s ease-in-out infinite alternate;
+}
+@keyframes mesh{from{transform:translate3d(-2%,-1%,0) scale(1)}to{transform:translate3d(2%,2%,0) scale(1.06)}}
+::selection{background:var(--accent);color:oklch(0.15 0.02 145)}
+em{font-style:italic;color:var(--accent)}
+b{font-weight:500;color:var(--ink)}
+a{color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+  padding:22px 4vw;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;mix-blend-mode:difference}
+nav .dot{color:var(--accent)}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 4vw 10vh}
+.eye{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(36px,7.2vw,92px);line-height:.98;letter-spacing:-.02em;max-width:920px}
+.lede{margin-top:22px;max-width:540px;font-size:17px;color:var(--muted)}
+.scrollcue{position:absolute;right:4vw;bottom:10vh;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl}
+
+section{position:relative;padding:16vh 4vw}
+.wrap{max-width:1180px;margin:0 auto}
+.k{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.4vw,60px);line-height:1.05;letter-spacing:-.015em;margin-bottom:26px}
+.body-txt{max-width:62ch;color:var(--muted);font-size:17px}
+.body-txt b{color:var(--ink)}
+
+.compare3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:34px}
+.compare3 .col{background:var(--bg2);padding:22px}
+.compare3 .col.vault{background:oklch(0.19 0.05 125)}
+.compare3 .colhead{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.compare3 .col.vault .colhead{color:var(--accent)}
+.compare3 .col p{font-size:13px;color:var(--muted);margin-bottom:6px}
+.compare3 .col.vault p{color:var(--ink)}
+
+.lesson .grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:start}
+.law{margin-top:26px;display:flex;flex-direction:column;gap:12px}
+.law div{display:flex;gap:14px;font-size:15px;color:var(--muted)}
+.law div::before{content:'·';color:var(--accent);font-weight:700}
+.law b{color:var(--ink);font-weight:500}
+
+.kitcard{background:oklch(0.13 0.014 145);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.kitcard .bar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid var(--line)}
+.kitcard .bar span{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.kititem{display:flex;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line);font-size:14px}
+.kititem:last-child{border-bottom:none}
+.kititem .n{font-family:var(--mono);color:var(--accent);min-width:20px}
+.kititem b{display:block;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:13px;margin-bottom:2px}
+.kititem span.d{color:var(--muted)}
+.kititem.bonus b{color:var(--accent2)}
+
+.campaigns{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.campgroup{background:var(--bg2);padding:24px 22px}
+.campgroup .pn{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.14em;margin-bottom:10px}
+.campgroup h3{font-family:var(--disp);font-weight:700;font-size:17px;text-transform:uppercase;margin-bottom:14px}
+.campgroup ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.campgroup li{font-size:13px;color:var(--muted)}
+.campgroup li b{color:var(--ink);font-weight:500}
+
+.band{padding:22vh 4vw;text-align:center}
+.band h2{max-width:24ch;margin:0 auto}
+
+.rows{margin-top:10px;display:grid;gap:0;border-top:1px solid var(--line)}
+.rowitem{display:grid;grid-template-columns:50px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+.rowitem .rn{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.rowitem .rq{font-family:var(--disp);font-weight:700;font-size:16px;margin-bottom:6px}
+.rowitem .ra{font-size:14px;color:var(--muted)}
+
+.reserve{text-align:center;padding:22vh 4vw}
+.price{font-family:var(--disp);font-weight:800;font-size:clamp(48px,8vw,88px);color:var(--accent);margin:20px 0}
+.price sup{font-size:.4em;vertical-align:top;color:var(--muted)}
+.cta{display:inline-block;margin-top:20px;font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid var(--accent);color:var(--accent);padding:18px 44px;border-radius:999px;text-decoration:none;transition:.3s}
+.cta:hover{background:var(--accent);color:oklch(0.15 0.02 145)}
+.reserve .fine{margin-top:22px;font-size:13px;color:var(--muted)}
+
+footer{position:relative;min-height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--muted)}
+footer::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(50% 90% at 50% 120%, oklch(0.4 0.18 125/.35), transparent 70%);
+  animation:aurora 9s ease-in-out infinite alternate}
+@keyframes aurora{from{opacity:.5;transform:translateX(-6%)}to{opacity:1;transform:translateX(6%)}}
+footer em{color:var(--accent);font-style:normal}
+
+/* .reveal starts visible by default — JS only hides it if GSAP actually loads, so the page never breaks on a CDN failure */
+@media(max-width:860px){.lesson .grid{grid-template-columns:1fr}.compare3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav><span>THE RESCUE SQUAD<span class="dot"> ·</span> EMAIL LIST RESCUE KIT</span><span>VAULT — 9$</span></nav>
+
+<header class="hero">
+  <div>
+    <div class="eye reveal">Exécution immédiate · 12 trames prêtes à personnaliser</div>
+    <h1 class="reveal">PLUS DE PAGE BLANCHE. PLUS D'HÉSITATION.</h1>
+    <p class="lede reveal">Le kit donne la stratégie et le diagnostic. Le Vault donne les mots — 12 trames de campagnes prêtes à personnaliser, pour passer du diagnostic à l'envoi en quelques minutes.</p>
+  </div>
+  <div class="scrollcue">scroll pour commencer</div>
+</header>
+
+<section class="thesis" id="thesis">
+  <div class="wrap">
+    <div class="k reveal">Les 3 offres, en un coup d'œil</div>
+    <h2 class="reveal">La stratégie. La licence. <em>Les mots.</em></h2>
+    <p class="body-txt reveal">Chaque offre répond à un blocage différent — voici où se place le Vault.</p>
+    <div class="compare3 reveal">
+      <div class="col">
+        <div class="colhead">Kit de base — 10$</div>
+        <p>Diagnostiquer la liste</p>
+        <p>Scorecard &amp; Workbook</p>
+        <p>Planners 30 jours</p>
+      </div>
+      <div class="col">
+        <div class="colhead">Offre Pro — 17$</div>
+        <p>Rebrander sous ta marque</p>
+        <p>Vendre à des clients</p>
+        <p>Page de vente &amp; promo</p>
+      </div>
+      <div class="col vault">
+        <div class="colhead">Campaign Vault — 9$</div>
+        <p><b>12 trames de campagnes</b></p>
+        <p><b>Objets &amp; CTA Vault</b></p>
+        <p><b>Exécution rapide</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lesson" id="kit">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="k reveal">Ce que contient le Vault</div>
+        <h2 class="reveal">7 outils. <em>Zéro paralysie rédactionnelle.</em></h2>
+        <p class="body-txt reveal">Tu passes du diagnostic à l'envoi effectif en quelques minutes grâce aux prompts d'adaptation IA.</p>
+        <div class="law reveal">
+          <div>Chaque trame précise <b>quand l'envoyer, à qui, quoi dire.</b></div>
+          <div>Le <b>Subject Line Vault</b> et le <b>CTA Vault</b> améliorent ouverture et clics.</div>
+          <div>Compatible <b>ChatGPT, Claude et Gemini</b> pour l'adaptation.</div>
+        </div>
+      </div>
+      <div class="kitcard reveal">
+        <div class="bar"><span>Contenu · achat unique</span></div>
+        <div class="kititem"><span class="n">01</span><div><b>12 Trames de campagnes</b><span class="d">Prêtes à personnaliser.</span></div></div>
+        <div class="kititem"><span class="n">02</span><div><b>Subject Line Vault</b><span class="d">Banque d'objets d'emails captivants.</span></div></div>
+        <div class="kititem"><span class="n">03</span><div><b>CTA Vault</b><span class="d">Banque d'appels à l'action stratégiques.</span></div></div>
+        <div class="kititem"><span class="n">04</span><div><b>Prompts d'urgence</b><span class="d">"Quoi envoyer aujourd'hui ?"</span></div></div>
+        <div class="kititem"><span class="n">05</span><div><b>Campaign Quick Finder</b><span class="d">Sélecteur rapide de campagne.</span></div></div>
+        <div class="kititem"><span class="n">06</span><div><b>Before You Send Checklist</b><span class="d">Vérification avant envoi.</span></div></div>
+        <div class="kititem"><span class="n">07</span><div><b>AI Adaptation Prompts</b><span class="d">Prompts d'adaptation sur-mesure.</span></div></div>
+        <div class="kititem bonus"><span class="n">★</span><div><b>Bonus — List Growth Engine AI Skill</b><span class="d">Lead magnets, page de capture, plan hebdo d'acquisition.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lesson" id="campaigns">
+  <div class="wrap">
+    <div class="k reveal">12 campagnes, 3 objectifs</div>
+    <h2 class="reveal">Une trame pour <em>chaque situation.</em></h2>
+    <div class="campaigns reveal">
+      <div class="campgroup">
+        <div class="pn">GROUPE 01</div>
+        <h3>Nouveaux &amp; inactifs</h3>
+        <ul>
+          <li><b>Welcome</b> — démarrer la relation</li>
+          <li><b>Reintroduction</b> — reconnexion sans culpabilité</li>
+          <li><b>Cold List Revival</b> — réactiver les inactifs</li>
+          <li><b>Stay-or-Go</b> — ultimatum avant nettoyage</li>
+        </ul>
+      </div>
+      <div class="campgroup">
+        <div class="pn">GROUPE 02</div>
+        <h3>Ventes &amp; offres</h3>
+        <ul>
+          <li><b>Lead Magnet Follow-Up</b> — gratuit → payant</li>
+          <li><b>Subscriber-to-Buyer</b> — conversion client</li>
+          <li><b>First-Offer</b> — première vente sans pression</li>
+          <li><b>Customer Re-engagement</b> — fidélisation</li>
+        </ul>
+      </div>
+      <div class="campgroup">
+        <div class="pn">GROUPE 03</div>
+        <h3>Recherche &amp; routine</h3>
+        <ul>
+          <li><b>Subscriber Preference</b> — qualification</li>
+          <li><b>New Product Interest</b> — validation avant lancement</li>
+          <li><b>Subscriber Survey</b> — voix du client</li>
+          <li><b>30-Day Relationship Plan</b> — régularité</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <h2 class="reveal">Diagnostic fait. Mots prêts. <em>Envoi immédiat.</em></h2>
+</section>
+
+<section id="objections">
+  <div class="wrap">
+    <div class="k reveal">Avant de prendre le Vault</div>
+    <h2 class="reveal">Ce que tu <em>te demandes</em> sûrement</h2>
+    <div class="rows reveal">
+      <div class="rowitem"><span class="rn">01</span><div><div class="rq">Ai-je besoin du kit de base d'abord ?</div><div class="ra">Le Vault fournit les mots, pas le diagnostic — il est pensé en complément du kit de base, pas en remplacement.</div></div></div>
+      <div class="rowitem"><span class="rn">02</span><div><div class="rq">Les trames sont-elles déjà en français ?</div><div class="ra">Les structures et prompts sont fournis pour être adaptés à ta langue et ta marque via l'IA.</div></div></div>
+      <div class="rowitem"><span class="rn">03</span><div><div class="rq">Est-ce que ça remplace la stratégie du kit ?</div><div class="ra">Non — le Vault accélère l'exécution une fois le parcours (Build/Warm/Revive/Convert) déjà choisi.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="reserve">
+  <div class="k reveal">Achat unique</div>
+  <h2 class="reveal">Débloque <em>les 12 trames.</em></h2>
+  <div class="price reveal"><sup>$</sup>9</div>
+  <a class="cta reveal" href="#">Débloquer le Vault</a>
+  <p class="fine reveal">Le complément le plus pratique pour passer immédiatement à l'action, sans perdre de temps sur la rédaction.</p>
+</section>
+
+<footer><span>the rescue squad_ · <em>campaign vault</em> · projet fictif d'entraînement</span></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+if (typeof gsap !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set('.hero > div:first-child > *',{y:50,opacity:0});
+  gsap.to('.hero > div:first-child > *',{y:0,opacity:1,duration:1.2,ease:'power3.out',stagger:0.12,delay:0.2});
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(el.closest('.hero')) return;
+    gsap.set(el,{opacity:0,y:40});
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE RESCUE SQUAD · Email List Rescue Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: oklch(0.15 0.015 300); --ink: oklch(0.94 0.01 60); --muted: oklch(0.62 0.02 300); --line: oklch(0.30 0.02 300);
+  --hot: oklch(0.68 0.23 355); --gold: oklch(0.78 0.11 85); --neon: oklch(0.88 0.23 125);
+  --disp:'Bricolage Grotesque',sans-serif; --sans:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;min-height:100vh;display:flex;flex-direction:column}
+nav{padding:22px 4vw;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:6vh 4vw;max-width:1000px;margin:0 auto;width:100%}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(32px,6vw,64px);letter-spacing:-.02em;margin-bottom:16px}
+p.lede{color:var(--muted);max-width:520px;margin-bottom:60px;font-size:16px}
+.offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.offer{background:oklch(0.13 0.014 300);padding:32px 26px;text-decoration:none;color:var(--ink);transition:.25s;display:block}
+.offer:hover{background:oklch(0.17 0.02 300)}
+.offer .tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.offer.fe .tag{color:var(--hot)}
+.offer.pro .tag{color:var(--gold)}
+.offer.vault .tag{color:var(--neon)}
+.offer h2{font-family:var(--disp);font-weight:700;font-size:22px;text-transform:uppercase;margin-bottom:10px}
+.offer p{font-size:14px;color:var(--muted);margin-bottom:16px}
+.offer .price{font-family:var(--disp);font-weight:800;font-size:28px}
+footer{padding:24px 4vw;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--muted);border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<nav>THE RESCUE SQUAD · EMAIL LIST RESCUE KIT</nav>
+<main>
+  <h1>VOTRE LISTE N'EST PAS MORTE.</h1>
+  <p class="lede">Elle est juste ignorée. Choisissez votre point d'entrée dans le protocole de réanimation.</p>
+  <div class="offers">
+    <a class="offer fe" href="fe.html">
+      <div class="tag">Offre de base</div>
+      <h2>Rescue Kit</h2>
+      <p>8 outils, diagnostic et protocole 30 jours.</p>
+      <div class="price">$10</div>
+    </a>
+    <a class="offer pro" href="pro.html">
+      <div class="tag">Upgrade commercial</div>
+      <h2>Pro</h2>
+      <p>Licence, rebranding, matériel de vente.</p>
+      <div class="price">$17</div>
+    </a>
+    <a class="offer vault" href="vault.html">
+      <div class="tag">Exécution rapide</div>
+      <h2>Campaign Vault</h2>
+      <p>12 trames de campagnes prêtes à l'emploi.</p>
+      <div class="price">$9</div>
+    </a>
+  </div>
+</main>
+<footer>the rescue squad_ · projet fictif d'entraînement · claude code club</footer>
+</body>
+</html>

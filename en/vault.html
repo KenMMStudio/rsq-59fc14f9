@@ -113,13 +113,33 @@ footer::before{content:'';position:absolute;inset:0;
 footer em{color:var(--accent);font-style:normal}
 
 @media(max-width:860px){.lesson .grid{grid-template-columns:1fr}.compare3{grid-template-columns:1fr}}
+
+/* Nav & footer communs */
+.sitelinks{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.sitelinks a{color:inherit;text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;opacity:.85}
+.sitelinks a:hover{opacity:1}
+.footgood{padding:40px 4vw;text-align:center;border-top:1px solid var(--line);mix-blend-mode:normal}
+.footgood .footwrap{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:14px;align-items:center}
+.footgood .footbrand{font-family:var(--disp);font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+.footgood .sitelinks{justify-content:center;opacity:.9}
+.footgood .sitelinks a{color:var(--ink)}
+.footgood .footnote{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+@media(max-width:700px){ nav{flex-wrap:wrap;gap:10px;padding:16px 4vw} }
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" style="text-decoration:none">THE RESCUE SQUAD<span class="dot"> ·</span> EMAIL LIST RESCUE KIT</a>
-  <div class="right"><span>VAULT — $9</span><a class="lang" href="../vault.html">FR</a></div>
+  <div class="right sitelinks">
+    <a href="index.html">Home</a>
+    <a href="diagnostic.html">Diagnosis</a>
+    <a href="../challenge.html">Challenge</a>
+    <a href="fe.html">FE</a>
+    <a href="pro.html">Pro</a>
+    <a href="../skool.html">Skool</a>
+    <a class="lang" href="../vault.html">FR</a>
+  </div>
 </nav>
 
 <header class="hero">
@@ -250,7 +270,20 @@ footer em{color:var(--accent);font-style:normal}
   <p class="fine reveal">The most practical add-on for taking action right away, with no time lost on writing.</p>
 </section>
 
-<footer><span>the rescue squad_ · campaign vault · fictional training project</span></footer>
+<footer class="footgood">
+  <div class="footwrap">
+    <div class="footbrand">the rescue squad_ · campaign vault</div>
+    <div class="sitelinks">
+      <a href="index.html">Home</a>
+      <a href="diagnostic.html">Diagnosis</a>
+      <a href="../challenge.html">Challenge</a>
+      <a href="fe.html">FE</a>
+      <a href="pro.html">Pro</a>
+      <a href="../skool.html">Skool</a>
+    </div>
+    <div class="footnote">fictional training project · Claude Code Club · no real payment</div>
+  </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>

@@ -158,6 +158,17 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
   .diag-form{flex-direction:column}
   .btn-sticker{width:100%;text-align:center}
 }
+
+/* Nav & footer communs */
+.sitelinks{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.sitelinks a{color:var(--muted);text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sitelinks a:hover{color:var(--ink)}
+.footgood{padding:40px 4vw;text-align:center;border-top:1px solid var(--line)}
+.footgood .footwrap{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:14px;align-items:center}
+.footgood .footbrand{font-family:var(--disp);font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+.footgood .sitelinks{justify-content:center}
+.footgood .footnote{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+@media(max-width:700px){ nav{flex-wrap:wrap;gap:10px} }
 </style>
 </head>
 <body>
@@ -165,8 +176,14 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 <div class="topbar">Free diagnosis, real protocol — not a course to buy.</div>
 
 <nav>
-  <span class="brand">THE RESCUE SQUAD<span class="dot"> ·</span> FREE DIAGNOSIS</span>
-  <div class="navright">
+  <a class="brand" href="index.html" style="text-decoration:none">THE RESCUE SQUAD<span class="dot"> ·</span> FREE DIAGNOSIS</a>
+  <div class="navright sitelinks">
+    <a href="index.html">Home</a>
+    <a href="../challenge.html">Challenge</a>
+    <a href="fe.html">FE</a>
+    <a href="pro.html">Pro</a>
+    <a href="vault.html">Vault</a>
+    <a href="../skool.html">Skool</a>
     <a class="lang" href="../diagnostic.html">FR</a>
     <a class="btn-sticker small" href="#quiz">Start</a>
   </div>
@@ -384,7 +401,20 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
   </div>
 </section>
 
-<footer>the rescue squad_ · free diagnosis · fictional training project</footer>
+<footer class="footgood">
+  <div class="footwrap">
+    <div class="footbrand">the rescue squad_ · free diagnosis</div>
+    <div class="sitelinks">
+      <a href="index.html">Home</a>
+      <a href="../challenge.html">Challenge</a>
+      <a href="fe.html">FE</a>
+      <a href="pro.html">Pro</a>
+      <a href="vault.html">Vault</a>
+      <a href="../skool.html">Skool</a>
+    </div>
+    <div class="footnote">fictional training project · Claude Code Club · no real payment</div>
+  </div>
+</footer>
 
 <div class="cookiebar" id="cookiebar" hidden>
   <p>We use cookies to understand how this page is used. You can accept or decline — your choice is remembered.</p>

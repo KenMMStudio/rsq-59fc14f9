@@ -178,6 +178,17 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
   .diag-form{flex-direction:column}
   .btn-sticker{width:100%;text-align:center}
 }
+
+/* Nav & footer communs */
+.sitelinks{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.sitelinks a{color:var(--muted);text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sitelinks a:hover{color:var(--ink)}
+.footgood{padding:40px 4vw;text-align:center;border-top:1px solid var(--line)}
+.footgood .footwrap{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:14px;align-items:center}
+.footgood .footbrand{font-family:var(--disp);font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+.footgood .sitelinks{justify-content:center}
+.footgood .footnote{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+@media(max-width:700px){ nav{flex-wrap:wrap;gap:10px} }
 </style>
 </head>
 <body>
@@ -185,8 +196,14 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 <div class="topbar">Diagnostic gratuit, protocole réel — pas une formation à vendre.</div>
 
 <nav>
-  <span class="brand">THE RESCUE SQUAD<span class="dot"> ·</span> DIAGNOSTIC GRATUIT</span>
-  <div class="navright">
+  <a class="brand" href="index.html" style="text-decoration:none">THE RESCUE SQUAD<span class="dot"> ·</span> DIAGNOSTIC GRATUIT</a>
+  <div class="navright sitelinks">
+    <a href="index.html">Accueil</a>
+    <a href="challenge.html">Challenge</a>
+    <a href="fe.html">FE</a>
+    <a href="pro.html">Pro</a>
+    <a href="vault.html">Vault</a>
+    <a href="skool.html">Skool</a>
     <a class="lang" href="en/diagnostic.html">EN</a>
     <a class="btn-sticker small" href="#quiz">Lancer</a>
   </div>
@@ -404,7 +421,20 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
   </div>
 </section>
 
-<footer>the rescue squad_ · diagnostic gratuit · projet fictif d'entraînement</footer>
+<footer class="footgood">
+  <div class="footwrap">
+    <div class="footbrand">the rescue squad_ · diagnostic gratuit</div>
+    <div class="sitelinks">
+      <a href="index.html">Accueil</a>
+      <a href="challenge.html">Challenge</a>
+      <a href="fe.html">FE</a>
+      <a href="pro.html">Pro</a>
+      <a href="vault.html">Vault</a>
+      <a href="skool.html">Skool</a>
+    </div>
+    <div class="footnote">projet fictif d'entraînement · Claude Code Club · aucun paiement réel</div>
+  </div>
+</footer>
 
 <div class="cookiebar" id="cookiebar" hidden>
   <p>On utilise des cookies pour comprendre comment cette page est utilisée. Tu peux accepter ou refuser — ton choix est retenu.</p>

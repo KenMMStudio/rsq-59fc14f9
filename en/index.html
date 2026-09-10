@@ -33,12 +33,31 @@ p.lede{color:var(--muted);max-width:520px;margin-bottom:60px;font-size:16px}
 .offer p{font-size:14px;color:var(--muted);margin-bottom:16px}
 .offer .price{font-family:var(--disp);font-weight:800;font-size:28px}
 footer{padding:24px 4vw;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--muted);border-top:1px solid var(--line)}
+
+/* Nav & footer communs */
+.sitelinks{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.sitelinks a{color:var(--muted);text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sitelinks a:hover{color:var(--ink)}
+.footgood{padding:40px 4vw;text-align:center;border-top:1px solid var(--line)}
+.footgood .footwrap{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:14px;align-items:center}
+.footgood .footbrand{font-family:var(--disp);font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+.footgood .sitelinks{justify-content:center}
+.footgood .footnote{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
 </style>
 </head>
 <body>
 <nav>
   <span>THE RESCUE SQUAD · EMAIL LIST RESCUE KIT</span>
-  <a class="lang" href="../index.html">FR</a>
+  <div class="sitelinks">
+    <a href="index.html">Home</a>
+    <a href="diagnostic.html">Diagnosis</a>
+    <a href="../challenge.html">Challenge</a>
+    <a href="fe.html">FE</a>
+    <a href="pro.html">Pro</a>
+    <a href="vault.html">Vault</a>
+    <a href="../skool.html">Skool</a>
+    <a class="lang" href="../index.html">FR</a>
+  </div>
 </nav>
 <main>
   <h1>YOUR LIST ISN'T DEAD.</h1>
@@ -64,6 +83,20 @@ footer{padding:24px 4vw;text-align:center;font-family:var(--mono);font-size:11px
     </a>
   </div>
 </main>
-<footer>the rescue squad_ · fictional training project · claude code club</footer>
+<footer class="footgood">
+  <div class="footwrap">
+    <div class="footbrand">the rescue squad_</div>
+    <div class="sitelinks">
+      <a href="index.html">Home</a>
+      <a href="diagnostic.html">Diagnosis</a>
+      <a href="../challenge.html">Challenge</a>
+      <a href="fe.html">FE</a>
+      <a href="pro.html">Pro</a>
+      <a href="vault.html">Vault</a>
+      <a href="../skool.html">Skool</a>
+    </div>
+    <div class="footnote">fictional training project · Claude Code Club · no real payment</div>
+  </div>
+</footer>
 </body>
 </html>

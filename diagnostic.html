@@ -136,7 +136,18 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 .finalcta .fine{max-width:400px;margin-left:auto;margin-right:auto}
 .finalcta h2{margin-left:auto;margin-right:auto}
 
+
 footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted)}
+
+.cookiebar{position:fixed;left:20px;bottom:20px;max-width:340px;background:var(--ink);border:2px solid var(--ink);
+  box-shadow:4px 4px 0 rgba(0,0,0,.2);padding:20px;z-index:200}
+.cookiebar p{font-size:13px;line-height:1.5;color:#efe8e2;margin-bottom:16px}
+.cookiebtns{display:flex;gap:10px;justify-content:flex-end}
+.btn-outline{background:transparent;color:var(--paper);border:1px solid rgba(255,255,255,.35);padding:9px 16px;
+  font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer}
+.btn-outline:hover{border-color:rgba(255,255,255,.7)}
+.cookiebar .btn-sticker.small{box-shadow:3px 3px 0 rgba(0,0,0,.3)}
+@media(max-width:480px){.cookiebar{left:12px;right:12px;max-width:none;bottom:12px}}
 
 @media(max-width:600px){
   .diag-form{flex-direction:column}
@@ -176,8 +187,8 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
     <p class="section-lede reveal">Tu as déjà essayé les astuces habituelles. Si ta liste ressemble encore à ça, ce n'est pas ta niche le problème — c'est le protocole qui manque.</p>
     <div class="exhibits reveal">
       <div class="exhibit"><span class="tag">Preuve A</span><div><div class="eh">Un mauvais envoi, puis le silence</div><div class="ed">Le taux d'ouverture a chuté après un flop, alors tu as arrêté d'emailer — et chaque mois de silence aggrave la situation.</div></div></div>
-      <div class="exhibit"><span class="tag">Preuve B</span><div><div class="eh">Tu ne sais pas ce qui est vraiment cassé</div><div class="ed">Liste morte, mauvais objets d'email, mauvais horaire d'envoi — sans diagnostic, tu devines quoi corriger en premier.</div></div></div>
-      <div class="exhibit"><span class="tag">Preuve C</span><div><div class="eh">Chaque conseil contredit le précédent</div><div class="ed">"Nettoie ta liste." "Ne supprime jamais un contact." "Envoie plus." "Envoie moins." Rien ne te dit quoi faire avec TA liste, précisément.</div></div></div>
+      <div class="exhibit"><span class="tag">Preuve B</span><div><div class="eh">Tu l'as peut-être entraînée à t'ignorer</div><div class="ed">Envois irréguliers, jamais de suivi, que du promo quand tu écris — une liste apprend vite à ne plus ouvrir. Ce n'est pas elle qui a un problème, c'est l'entraînement qu'elle a reçu.</div></div></div>
+      <div class="exhibit"><span class="tag">Preuve C</span><div><div class="eh">Plus de contacts ne réglerait rien</div><div class="ed">Si tu ajoutais 1000 personnes identiques à celles déjà sur ta liste, est-ce que ça changerait quelque chose ? Si la réponse est non, ton problème n'est pas la taille — c'est le système.</div></div></div>
     </div>
   </div>
 </section>
@@ -192,12 +203,13 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 <section id="whatsinside">
   <div class="wrap">
     <div class="k reveal">Ce que tu reçois</div>
-    <h2 class="reveal">Un email. <em>Quatre choses concrètes.</em></h2>
+    <h2 class="reveal">Basé sur un vrai système. <em>Pas une devinette.</em></h2>
+    <p class="section-lede reveal">Le diagnostic ne sort pas d'un chapeau — il vient du même Scorecard qui structure tout le protocole Rescue Squad.</p>
     <div class="kitcard reveal">
       <div class="bar">Ton diagnostic · livré par email</div>
-      <div class="kititem"><span class="n">01</span><div><b>Ton score sur 4 piliers</b><span class="d">Fondations, engagement, régularité, hygiène de liste.</span></div></div>
-      <div class="kititem"><span class="n">02</span><div><b>La cause la plus probable</b><span class="d">Identifiée noir sur blanc, pas une supposition.</span></div></div>
-      <div class="kititem"><span class="n">03</span><div><b>L'ordre exact des 3 prochaines actions</b><span class="d">Pas une liste en vrac à trier toi-même.</span></div></div>
+      <div class="kititem"><span class="n">01</span><div><b>Ton score sur les 8 piliers réels</b><span class="d">Fondations de liste, qualité des abonnés, régularité, engagement, pertinence & confiance, segmentation, parcours d'achat, hygiène de liste.</span></div></div>
+      <div class="kititem"><span class="n">02</span><div><b>Ton chemin de sauvetage prioritaire</b><span class="d">Build, Warm, Revive ou Convert — un seul à la fois, pas les quatre en même temps.</span></div></div>
+      <div class="kititem"><span class="n">03</span><div><b>La cause la plus probable</b><span class="d">Identifiée noir sur blanc, pas une supposition.</span></div></div>
       <div class="kititem"><span class="n">04</span><div><b>Un lien vers le protocole complet</b><span class="d">Si tu veux aller plus loin — sans obligation.</span></div></div>
     </div>
   </div>
@@ -279,6 +291,25 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 
 <footer>the rescue squad_ · diagnostic gratuit · projet fictif d'entraînement</footer>
 
+<div class="cookiebar" id="cookiebar" hidden>
+  <p>On utilise des cookies pour comprendre comment cette page est utilisée. Tu peux accepter ou refuser — ton choix est retenu.</p>
+  <div class="cookiebtns">
+    <button class="btn-outline" id="cookieDecline">Refuser</button>
+    <button class="btn-sticker small" id="cookieAccept">Accepter</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  try{ if(localStorage.getItem('rsq_cookie_choice')) return; }catch(e){}
+  var bar = document.getElementById('cookiebar');
+  if(!bar) return;
+  bar.hidden = false;
+  function choose(v){ try{ localStorage.setItem('rsq_cookie_choice', v); }catch(e){} bar.hidden = true; }
+  document.getElementById('cookieAccept').addEventListener('click', function(){ choose('accepted'); });
+  document.getElementById('cookieDecline').addEventListener('click', function(){ choose('declined'); });
+})();
+</script>
 <script>
 if('IntersectionObserver' in window){
   var els = document.querySelectorAll('.reveal');

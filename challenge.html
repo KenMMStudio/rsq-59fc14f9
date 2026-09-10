@@ -130,6 +130,16 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 
 footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted)}
 
+.cookiebar{position:fixed;left:20px;bottom:20px;max-width:340px;background:var(--ink);border:2px solid var(--ink);
+  box-shadow:4px 4px 0 rgba(0,0,0,.2);padding:20px;z-index:200}
+.cookiebar p{font-size:13px;line-height:1.5;color:#efe8e2;margin-bottom:16px}
+.cookiebtns{display:flex;gap:10px;justify-content:flex-end}
+.btn-outline{background:transparent;color:var(--paper);border:1px solid rgba(255,255,255,.35);padding:9px 16px;
+  font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer}
+.btn-outline:hover{border-color:rgba(255,255,255,.7)}
+.cookiebar .btn-sticker.small{box-shadow:3px 3px 0 rgba(0,0,0,.3)}
+@media(max-width:480px){.cookiebar{left:12px;right:12px;max-width:none;bottom:12px}}
+
 @media(max-width:600px){
   .diag-form{flex-direction:column}
   .btn-sticker{width:100%;text-align:center}
@@ -165,8 +175,8 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
     <p class="section-lede reveal">You've tried the fixes. If your list still looks like this, it isn't your niche — it's the missing protocol.</p>
     <div class="exhibits reveal">
       <div class="exhibit"><span class="tag">Exhibit A</span><div><div class="eh">One bad send, then silence</div><div class="ed">Open rates dropped after a flop, so you stopped emailing — and every month of silence makes it worse.</div></div></div>
-      <div class="exhibit"><span class="tag">Exhibit B</span><div><div class="eh">You don't know what's actually broken</div><div class="ed">Dead list, bad subject lines, wrong send time — without a diagnosis, you're guessing which one to fix first.</div></div></div>
-      <div class="exhibit"><span class="tag">Exhibit C</span><div><div class="eh">Every piece of advice contradicts the last</div><div class="ed">"Clean your list." "Never delete a contact." "Send more." "Send less." None of it tells you what to do with your list specifically.</div></div></div>
+      <div class="exhibit"><span class="tag">Exhibit B</span><div><div class="eh">You may have trained it to ignore you</div><div class="ed">Irregular sends, no follow-up, only promo when you do write — a list learns fast to stop opening. The list isn't the problem. The training it got is.</div></div></div>
+      <div class="exhibit"><span class="tag">Exhibit C</span><div><div class="eh">More contacts wouldn't fix it</div><div class="ed">If you added 1,000 people identical to the ones already on your list, would that solve anything? If the answer is no, your problem isn't size — it's the system.</div></div></div>
     </div>
   </div>
 </section>
@@ -256,6 +266,25 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 
 <footer>the rescue squad_ · 7-day rescue challenge · fictional training project</footer>
 
+<div class="cookiebar" id="cookiebar" hidden>
+  <p>We use cookies to understand how this page is used. You can accept or decline — your choice is remembered.</p>
+  <div class="cookiebtns">
+    <button class="btn-outline" id="cookieDecline">Decline</button>
+    <button class="btn-sticker small" id="cookieAccept">Accept</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  try{ if(localStorage.getItem('rsq_cookie_choice')) return; }catch(e){}
+  var bar = document.getElementById('cookiebar');
+  if(!bar) return;
+  bar.hidden = false;
+  function choose(v){ try{ localStorage.setItem('rsq_cookie_choice', v); }catch(e){} bar.hidden = true; }
+  document.getElementById('cookieAccept').addEventListener('click', function(){ choose('accepted'); });
+  document.getElementById('cookieDecline').addEventListener('click', function(){ choose('declined'); });
+})();
+</script>
 <script>
 if('IntersectionObserver' in window){
   var els = document.querySelectorAll('.reveal');

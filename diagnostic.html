@@ -17,6 +17,7 @@
   --line: rgba(35,27,27,.14);
   --hot:#ff1493;
   --hot2:#ff4fb3;
+  --denim:#244e78;
   --ok:#4b7500;
   --danger:#c82753;
   --disp:'Bricolage Grotesque',sans-serif;
@@ -38,18 +39,28 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 4
 .navright{display:flex;align-items:center;gap:14px}
 .lang{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-decoration:none;border:1px solid var(--ink);padding:6px 12px}
 
-.btn-sticker{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
-  background:var(--hot);color:#fff8fa;border:2px solid var(--ink);border-radius:0;padding:15px 28px;
+/* sticker CTA — bordure + ombre carrée, fond dégradé hot2→hot (spec charte "CTA principal") */
+.btn-sticker{position:relative;overflow:visible;display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  background:linear-gradient(135deg, var(--hot2), var(--hot));color:#fff8fa;border:2px solid var(--ink);border-radius:0;padding:15px 28px;
   box-shadow:4px 4px 0 var(--ink);transition:transform .15s ease, box-shadow .15s ease;cursor:pointer;white-space:nowrap;text-decoration:none}
 .btn-sticker:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
 .btn-sticker:active{transform:translate(0,0);box-shadow:2px 2px 0 var(--ink)}
 .btn-sticker:disabled{opacity:.6;cursor:default;transform:none;box-shadow:4px 4px 0 var(--ink)}
 .btn-sticker.small{padding:10px 18px;font-size:11px;box-shadow:3px 3px 0 var(--ink)}
+.btn-sticker::after{content:'✦';position:absolute;top:-10px;right:-10px;font-size:14px;color:var(--ink);opacity:0;
+  transform:scale(.5) rotate(-20deg);transition:opacity .25s ease, transform .25s ease;pointer-events:none}
+.btn-sticker:hover::after{opacity:1;transform:scale(1) rotate(0deg)}
 
 .hero{padding:9vh 4vw 8vh;max-width:1180px;margin:0 auto}
 .eye{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:18px}
-h1{font-family:var(--disp);font-weight:800;font-size:clamp(34px,6vw,72px);line-height:1;letter-spacing:-.02em;max-width:820px}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(34px,6vw,72px);line-height:1.08;letter-spacing:-.02em;max-width:820px}
 .lede{margin-top:20px;max-width:520px;font-size:17px;color:var(--muted)}
+
+/* soulignement "dessiné à la main" — signature visuelle sur le mot-clé, pur CSS, se dessine au chargement */
+.squiggle{position:relative;display:inline-block}
+.squiggle .uline{position:absolute;left:-2%;right:-2%;bottom:-4px;width:104%;height:14px;overflow:visible}
+.squiggle .uline path{fill:none;stroke:var(--hot);stroke-width:4;stroke-linecap:round;stroke-dasharray:170;stroke-dashoffset:170;animation:draw 1s ease-out .4s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
 
 .diag-form{margin-top:30px;display:flex;gap:10px;max-width:460px;flex-wrap:wrap}
 .diag-form input[type=email]{flex:1;min-width:220px;background:var(--paper);border:2px solid var(--ink);color:var(--ink);
@@ -67,6 +78,11 @@ section{padding:9vh 4vw}
 h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line-height:1.06;letter-spacing:-.01em;margin-bottom:14px;max-width:22ch}
 .section-lede{max-width:60ch;color:var(--muted);font-size:16px;margin-bottom:44px}
 
+/* fade-up au scroll — dégradation gracieuse : reste visible si JS/IO indisponible */
+.reveal{opacity:1;transform:none}
+.reveal.io-ready{transition:opacity .7s ease, transform .7s ease}
+.reveal.io-pending{opacity:0;transform:translateY(28px)}
+
 .exhibits{border-top:1px solid var(--line)}
 .exhibit{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}
 .exhibit .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hot)}
@@ -74,16 +90,37 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 .exhibit .ed{font-size:14px;color:var(--muted);max-width:56ch}
 @media(max-width:640px){.exhibit{grid-template-columns:1fr;gap:8px}}
 
+/* Bloc Diagnostic — composant §04 de la charte : fond noir, chiffre clé en neon */
+.blocdiag{background:#111111;color:var(--paper);text-align:center;padding:12vh 4vw}
+.blocdiag .k{color:#b7ff00}
+.blocdiag .stat{font-family:var(--disp);font-weight:800;font-size:clamp(52px,11vw,128px);line-height:1;letter-spacing:-.02em;color:#b7ff00}
+.blocdiag .cap{margin:22px auto 0;max-width:58ch;font-size:15px;color:#d9d2cc}
+.blocdiag .src{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a8480}
+
+/* kit-list — "ce que tu reçois", fond paper, bordure denim (adapté de fe.html) */
+.kitcard{background:var(--paper);border:2px solid var(--denim);margin-top:10px}
+.kitcard .bar{padding:14px 20px;border-bottom:2px solid var(--denim);font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--denim)}
+.kititem{display:flex;gap:16px;padding:22px 20px;border-bottom:1px solid var(--line)}
+.kititem:last-child{border-bottom:none}
+.kititem .n{font-family:var(--mono);color:var(--denim);min-width:26px;font-size:13px}
+.kititem b{display:block;font-family:var(--disp);font-weight:700;font-size:15px;margin-bottom:4px}
+.kititem span.d{font-size:14px;color:var(--muted)}
+
+/* Scorecard pour/pas pour toi — coches ok / croix danger, strictement en contexte d'état */
+.scorecard{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:10px}
+.scorecard h3{font-family:var(--disp);font-weight:700;font-size:16px;margin-bottom:18px}
+.scorecard ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.scorecard li{display:flex;gap:10px;font-size:14px;color:var(--muted);align-items:flex-start}
+.scorecard .yes li::before{content:'✓';color:var(--ok);font-weight:700;flex:none}
+.scorecard .no li::before{content:'✕';color:var(--danger);font-weight:700;flex:none}
+@media(max-width:700px){.scorecard{grid-template-columns:1fr;gap:28px}}
+
 .steps{border-top:1px solid var(--line)}
 .step{display:grid;grid-template-columns:60px 200px 1fr;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
 .step .sn{font-family:var(--mono);font-size:12px;color:var(--hot)}
 .step .sh{font-family:var(--disp);font-weight:700;font-size:18px;text-transform:uppercase}
 .step p{font-size:14px;color:var(--muted);margin:0}
 @media(max-width:700px){.step{grid-template-columns:1fr}}
-
-.proofblock{background:var(--paper);border:2px solid var(--ink);border-radius:0;padding:40px;box-shadow:5px 5px 0 var(--ink)}
-.proofblock blockquote{font-family:var(--disp);font-weight:600;font-size:20px;line-height:1.4;max-width:64ch}
-.proofblock .src{margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
 .faq{border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line);padding:20px 0}
@@ -121,7 +158,7 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 
 <header class="hero">
   <div class="eye">Gratuit · 2 minutes · par email</div>
-  <h1>Ta liste n'ouvre plus. On regarde pourquoi.</h1>
+  <h1>Ta liste n'ouvre plus. On regarde <span class="squiggle">pourquoi<svg class="uline" viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 Q 30 3, 60 8 T 118 7"/></svg></span>.</h1>
   <p class="lede">Réponds à 6 questions sur ta liste. Reçois ton diagnostic par email : ce qui bloque ton taux d'ouverture, et dans quel ordre le réparer.</p>
   <form class="diag-form" data-diag-form>
     <label class="hp" aria-hidden="true">Ne pas remplir<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
@@ -134,10 +171,10 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 
 <section id="problem">
   <div class="wrap">
-    <div class="k">Ça te parle ?</div>
-    <h2>Les raisons pour lesquelles ta liste s'est tue.</h2>
-    <p class="section-lede">Tu as déjà essayé les astuces habituelles. Si ta liste ressemble encore à ça, ce n'est pas ta niche le problème — c'est le protocole qui manque.</p>
-    <div class="exhibits">
+    <div class="k reveal">Ça te parle ?</div>
+    <h2 class="reveal">Les raisons pour lesquelles ta liste s'est tue.</h2>
+    <p class="section-lede reveal">Tu as déjà essayé les astuces habituelles. Si ta liste ressemble encore à ça, ce n'est pas ta niche le problème — c'est le protocole qui manque.</p>
+    <div class="exhibits reveal">
       <div class="exhibit"><span class="tag">Preuve A</span><div><div class="eh">Un mauvais envoi, puis le silence</div><div class="ed">Le taux d'ouverture a chuté après un flop, alors tu as arrêté d'emailer — et chaque mois de silence aggrave la situation.</div></div></div>
       <div class="exhibit"><span class="tag">Preuve B</span><div><div class="eh">Tu ne sais pas ce qui est vraiment cassé</div><div class="ed">Liste morte, mauvais objets d'email, mauvais horaire d'envoi — sans diagnostic, tu devines quoi corriger en premier.</div></div></div>
       <div class="exhibit"><span class="tag">Preuve C</span><div><div class="eh">Chaque conseil contredit le précédent</div><div class="ed">"Nettoie ta liste." "Ne supprime jamais un contact." "Envoie plus." "Envoie moins." Rien ne te dit quoi faire avec TA liste, précisément.</div></div></div>
@@ -145,11 +182,32 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
   </div>
 </section>
 
+<section class="blocdiag">
+  <div class="k reveal">Ce que ce protocole a déjà fait</div>
+  <div class="stat reveal">0,8% → 22%</div>
+  <p class="cap reveal">Un créateur de formation avec 40 000 abonnés, prêt à tout recommencer à zéro. Un après-midi de diagnostic, un protocole de 14 jours, zéro contact supprimé.</p>
+  <div class="src">The Rescue Squad · cas réel du protocole</div>
+</section>
+
+<section id="whatsinside">
+  <div class="wrap">
+    <div class="k reveal">Ce que tu reçois</div>
+    <h2 class="reveal">Un email. <em>Quatre choses concrètes.</em></h2>
+    <div class="kitcard reveal">
+      <div class="bar">Ton diagnostic · livré par email</div>
+      <div class="kititem"><span class="n">01</span><div><b>Ton score sur 4 piliers</b><span class="d">Fondations, engagement, régularité, hygiène de liste.</span></div></div>
+      <div class="kititem"><span class="n">02</span><div><b>La cause la plus probable</b><span class="d">Identifiée noir sur blanc, pas une supposition.</span></div></div>
+      <div class="kititem"><span class="n">03</span><div><b>L'ordre exact des 3 prochaines actions</b><span class="d">Pas une liste en vrac à trier toi-même.</span></div></div>
+      <div class="kititem"><span class="n">04</span><div><b>Un lien vers le protocole complet</b><span class="d">Si tu veux aller plus loin — sans obligation.</span></div></div>
+    </div>
+  </div>
+</section>
+
 <section id="how">
   <div class="wrap">
-    <div class="k">Comment ça marche</div>
-    <h2>Trois étapes. <em>Aucune supposition.</em></h2>
-    <div class="steps">
+    <div class="k reveal">Comment ça marche</div>
+    <h2 class="reveal">Trois étapes. <em>Aucune supposition.</em></h2>
+    <div class="steps reveal">
       <div class="step"><span class="sn">01</span><span class="sh">Réponds</span><p>6 questions rapides sur ta liste — aucune connaissance technique requise.</p></div>
       <div class="step"><span class="sn">02</span><span class="sh">Reçois</span><p>Ton diagnostic arrive par email : ce qui est vraiment cassé, en langage clair.</p></div>
       <div class="step"><span class="sn">03</span><span class="sh">Corrige, dans l'ordre</span><p>La séquence exacte à suivre — pas un tas de conseils à trier toi-même.</p></div>
@@ -157,21 +215,36 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
   </div>
 </section>
 
-<section id="proof">
+<section id="scorecard">
   <div class="wrap">
-    <div class="k">Ce que ce protocole a déjà fait</div>
-    <div class="proofblock">
-      <blockquote>"Un créateur de formation avec 40 000 abonnés, prêt à tout recommencer à zéro. Un après-midi de diagnostic, un protocole de 14 jours, zéro contact supprimé — le taux d'ouverture est passé de 0,8% à 22%."</blockquote>
-      <div class="src">The Rescue Squad · cas réel du protocole</div>
+    <div class="k reveal">Avant de te lancer</div>
+    <h2 class="reveal">Ce diagnostic est fait pour toi <em>si...</em></h2>
+    <div class="scorecard reveal">
+      <div class="yes">
+        <h3>C'est pour toi si</h3>
+        <ul>
+          <li>Tu as une liste entre 500 et 50 000 contacts</li>
+          <li>Tu as arrêté d'emailer depuis plusieurs mois</li>
+          <li>Tu ne sais pas par où recommencer</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h3>Pas pour toi si</h3>
+        <ul>
+          <li>Tu n'as pas encore de liste du tout</li>
+          <li>Tu cherches une solution en moins de 24h</li>
+          <li>Tu veux juste plus de volume, pas un diagnostic</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="faq">
   <div class="wrap">
-    <div class="k">Avant de te lancer</div>
-    <h2>Ce que tu te demandes sûrement.</h2>
-    <div class="faq">
+    <div class="k reveal">Ce que tu te demandes sûrement</div>
+    <h2 class="reveal">Questions fréquentes.</h2>
+    <div class="faq reveal">
       <details>
         <summary>Je ne suis pas technique — ça va être compliqué à lire ?</summary>
         <p class="fa">Non. Le diagnostic se lit en 3 minutes, écrit pour un humain, pas pour un développeur. Aucun logiciel, aucun tableau de bord à apprendre.</p>
@@ -184,14 +257,18 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
         <summary>Qu'est-ce qui se passe après avoir reçu mon diagnostic ?</summary>
         <p class="fa">Tu sauras exactement où en est ta liste et dans quel ordre la réparer. Si tu veux le protocole complet de 30 jours pour l'exécuter étape par étape, c'est le Rescue Kit (10$) — sans aucune pression.</p>
       </details>
+      <details>
+        <summary>Je peux refaire le diagnostic plus tard si ma liste change ?</summary>
+        <p class="fa">Oui. Le diagnostic reflète l'état de ta liste au moment où tu réponds — tu peux le relancer autant de fois que tu veux.</p>
+      </details>
     </div>
   </div>
 </section>
 
 <section class="finalcta" id="cta">
-  <div class="k">Diagnostic avant traitement</div>
-  <h2>Récupère <em>ton diagnostic.</em></h2>
-  <form class="diag-form" data-diag-form>
+  <div class="k reveal">Diagnostic avant traitement</div>
+  <h2 class="reveal">Récupère <em>ton diagnostic.</em></h2>
+  <form class="diag-form reveal" data-diag-form>
     <label class="hp" aria-hidden="true">Ne pas remplir<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
     <input type="email" name="email" placeholder="ton@email.com" required>
     <button type="submit" class="btn-sticker">Lancer mon diagnostic gratuit</button>
@@ -203,6 +280,17 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 <footer>the rescue squad_ · diagnostic gratuit · projet fictif d'entraînement</footer>
 
 <script>
+if('IntersectionObserver' in window){
+  var els = document.querySelectorAll('.reveal');
+  els.forEach(function(el){ el.classList.add('io-ready','io-pending'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.remove('io-pending'); io.unobserve(entry.target); }
+    });
+  }, {threshold:0.12});
+  els.forEach(function(el){ io.observe(el); });
+}
+
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnpqlyqa';
 
 document.querySelectorAll('[data-diag-form]').forEach(form=>{

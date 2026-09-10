@@ -1,6 +1,13 @@
 # The Rescue Squad — Stage 3 (source officielle)
 
-Ce dossier est la **source unique déployée** du site (`.git` + `.vercel` ici). Toute modification de `diagnostic.html`, `challenge.html` ou `skool.html` doit se faire **ici en premier**.
+Ce dossier est la **source unique** du site (`.git` ici). Toute modification de `diagnostic.html`, `challenge.html` ou `skool.html` doit se faire **ici en premier**.
+
+## Déploiement
+
+Deux plateformes existent pour ce projet, dans un état différent (vérifié le 2026-09-10) :
+
+- **GitHub Pages** — <https://kenmmstudio.github.io/rsq-59fc14f9/> — **à jour**, se redéploie automatiquement à chaque push sur `main` (GitHub Actions). C'est la version de référence pour tester le site.
+- **Vercel** — <https://rsq-59fc14f9.vercel.app/> — compte créé et projet lié (dossier `.vercel/`, gitignored), mais **ce déploiement n'est pas connecté aux pushes Git** : il sert encore une version très ancienne du site (hero en `min-height:100vh`/`align-items:flex-end`, sans `cookie-consent.js`), antérieure à toutes les corrections faites dans ce projet. Pousser sur `main` ne le met pas à jour. À reconnecter (intégration Git dans le dashboard Vercel) ou redéployer manuellement (`vercel --prod`) si on veut s'en servir — sinon le garder comme deuxième plateforme à corriger plus tard, mais ne pas s'y fier pour vérifier une correction en attendant.
 
 ## Copies dans Stage 4
 

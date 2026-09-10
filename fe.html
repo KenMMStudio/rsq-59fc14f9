@@ -126,6 +126,18 @@ footer em{color:var(--accent);font-style:normal}
   .lesson .grid{grid-template-columns:1fr}
 }
 
+/* Aperçu Rescue Scorecard — illustratif uniquement, jamais une vraie donnée client */
+.scoreprev{margin-top:22px;background:oklch(0.13 0.014 350);border:1px solid var(--line);border-radius:8px;overflow:hidden;max-width:calc(100vw - 40px)}
+.scoreprev .spbar{padding:12px 18px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 10px;min-width:0}
+.scoreprev .spbar span{overflow-wrap:anywhere;min-width:0}
+.scoreprev .spnote{font-size:10px;letter-spacing:.1em;color:var(--muted);text-transform:none}
+.sprow{display:flex;align-items:center;gap:14px;padding:9px 18px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.sprow:last-child{border-bottom:none}
+.sprow .spl{flex:0 0 150px}
+.spmeter{flex:1;height:6px;background:var(--line);border-radius:99px;overflow:hidden}
+.spmeter span{display:block;height:100%;background:var(--accent);border-radius:99px}
+@media(max-width:700px){.sprow{flex-direction:column;align-items:flex-start;gap:6px}.sprow .spl{flex:none}.scoreprev .spbar{flex-direction:column;align-items:flex-start;gap:4px}}
+
 /* Nav & footer communs */
 .sitelinks{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
 .sitelinks a{color:inherit;text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;opacity:.85}
@@ -183,6 +195,17 @@ footer em{color:var(--accent);font-style:normal}
           <div><b>La règle de l'unique parcours :</b> ne pas tout réparer en même temps.</div>
           <div>Le Scorecard <b>isole mathématiquement</b> le parcours prioritaire.</div>
           <div>Chaque outil est <b>réutilisable</b> pour plusieurs listes ou clients.</div>
+        </div>
+        <div class="scoreprev reveal">
+          <div class="spbar"><span>Rescue Scorecard · exemple illustratif</span><span class="spnote">Pas des données clients</span></div>
+          <div class="sprow"><span class="spl">Fondations de liste</span><span class="spmeter"><span style="width:42%"></span></span></div>
+          <div class="sprow"><span class="spl">Qualité des abonnés</span><span class="spmeter"><span style="width:68%"></span></span></div>
+          <div class="sprow"><span class="spl">Régularité</span><span class="spmeter"><span style="width:25%"></span></span></div>
+          <div class="sprow"><span class="spl">Engagement</span><span class="spmeter"><span style="width:57%"></span></span></div>
+          <div class="sprow"><span class="spl">Pertinence &amp; confiance</span><span class="spmeter"><span style="width:73%"></span></span></div>
+          <div class="sprow"><span class="spl">Segmentation</span><span class="spmeter"><span style="width:31%"></span></span></div>
+          <div class="sprow"><span class="spl">Parcours d'achat</span><span class="spmeter"><span style="width:46%"></span></span></div>
+          <div class="sprow"><span class="spl">Hygiène de liste</span><span class="spmeter"><span style="width:61%"></span></span></div>
         </div>
       </div>
       <div class="kitcard reveal">

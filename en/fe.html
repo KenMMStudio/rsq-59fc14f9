@@ -113,7 +113,19 @@ footer::before{content:'';position:absolute;inset:0;
 @keyframes aurora{from{opacity:.5;transform:translateX(-6%)}to{opacity:1;transform:translateX(6%)}}
 footer em{color:var(--accent);font-style:normal}
 
+/* Rescue Scorecard preview — illustrative only, never real client data */
+.scoreprev{margin-top:22px;background:oklch(0.13 0.014 350);border:1px solid var(--line);border-radius:8px;overflow:hidden;max-width:calc(100vw - 40px)}
+.scoreprev .spbar{padding:12px 18px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 10px;min-width:0}
+.scoreprev .spbar span{overflow-wrap:anywhere;min-width:0}
+.scoreprev .spnote{font-size:10px;letter-spacing:.1em;color:var(--muted);text-transform:none}
+.sprow{display:flex;align-items:center;gap:14px;padding:9px 18px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.sprow:last-child{border-bottom:none}
+.sprow .spl{flex:0 0 150px}
+.spmeter{flex:1;height:6px;background:var(--line);border-radius:99px;overflow:hidden}
+.spmeter span{display:block;height:100%;background:var(--accent);border-radius:99px}
+
 @media(max-width:860px){.lesson .grid{grid-template-columns:1fr}}
+@media(max-width:700px){.sprow{flex-direction:column;align-items:flex-start;gap:6px}.sprow .spl{flex:none}.scoreprev .spbar{flex-direction:column;align-items:flex-start;gap:4px}}
 
 /* Nav & footer communs */
 .sitelinks{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
@@ -172,6 +184,17 @@ footer em{color:var(--accent);font-style:normal}
           <div><b>The one-path rule:</b> don't try to fix everything at once.</div>
           <div>The Scorecard <b>mathematically isolates</b> your priority path.</div>
           <div>Every tool is <b>reusable</b> across multiple lists or clients.</div>
+        </div>
+        <div class="scoreprev reveal">
+          <div class="spbar"><span>Rescue Scorecard · illustrative sample output</span><span class="spnote">Not client data</span></div>
+          <div class="sprow"><span class="spl">List foundation</span><span class="spmeter"><span style="width:42%"></span></span></div>
+          <div class="sprow"><span class="spl">Subscriber quality</span><span class="spmeter"><span style="width:68%"></span></span></div>
+          <div class="sprow"><span class="spl">Consistency</span><span class="spmeter"><span style="width:25%"></span></span></div>
+          <div class="sprow"><span class="spl">Engagement</span><span class="spmeter"><span style="width:57%"></span></span></div>
+          <div class="sprow"><span class="spl">Relevance &amp; trust</span><span class="spmeter"><span style="width:73%"></span></span></div>
+          <div class="sprow"><span class="spl">Segmentation</span><span class="spmeter"><span style="width:31%"></span></span></div>
+          <div class="sprow"><span class="spl">Buyer path</span><span class="spmeter"><span style="width:46%"></span></span></div>
+          <div class="sprow"><span class="spl">List hygiene</span><span class="spmeter"><span style="width:61%"></span></span></div>
         </div>
       </div>
       <div class="kitcard reveal">

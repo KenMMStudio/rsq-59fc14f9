@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
@@ -10,12 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* scene : un bureau tard le soir, lampe dorée, un contrat de licence posé sous la lumière */
   --bg: oklch(0.16 0.018 85);
   --bg2: oklch(0.19 0.02 85);
   --ink: oklch(0.94 0.01 70);
   --muted: oklch(0.62 0.02 80);
-  --accent: oklch(0.78 0.11 85);      /* seul accent engagé : l'or, réservé aux offres supérieures */
+  --accent: oklch(0.78 0.11 85);
   --accent2: oklch(0.85 0.19 115);
   --line: oklch(0.30 0.02 85);
   --disp:'Bricolage Grotesque',sans-serif;
@@ -58,7 +57,6 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.4vw,60px);line
 .body-txt{max-width:62ch;color:var(--muted);font-size:17px}
 .body-txt b{color:var(--ink)}
 
-/* comparatif */
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:34px}
 .compare .col{background:var(--bg2);padding:26px}
 .compare .col.pro{background:oklch(0.20 0.03 85)}
@@ -113,7 +111,6 @@ footer::before{content:'';position:absolute;inset:0;
 @keyframes aurora{from{opacity:.5;transform:translateX(-6%)}to{opacity:1;transform:translateX(6%)}}
 footer em{color:var(--accent);font-style:normal}
 
-/* .reveal starts visible by default — JS only hides it if GSAP actually loads, so the page never breaks on a CDN failure */
 @media(max-width:860px){.lesson .grid{grid-template-columns:1fr}.compare{grid-template-columns:1fr}}
 </style>
 </head>
@@ -121,37 +118,37 @@ footer em{color:var(--accent);font-style:normal}
 
 <nav>
   <a href="index.html" style="text-decoration:none">THE RESCUE SQUAD<span class="dot"> ·</span> EMAIL LIST RESCUE KIT</a>
-  <div class="right"><span>UPGRADE PRO — 17$</span><a class="lang" href="en/pro.html">EN</a></div>
+  <div class="right"><span>PRO UPGRADE — $17</span><a class="lang" href="../pro.html">FR</a></div>
 </nav>
 
 <header class="hero">
   <div>
-    <div class="eye reveal">Usage commercial · licence · matériel de vente</div>
-    <h1 class="reveal">TON KIT. TA MARQUE. TON CATALOGUE.</h1>
-    <p class="lede reveal">Le kit de base répare ta propre liste. L'upgrade Pro te donne le droit de vendre la méthode — sous ton nom, avec tes propres clients.</p>
+    <div class="eye reveal">Commercial use · licensing · sales assets</div>
+    <h1 class="reveal">YOUR KIT. YOUR BRAND. YOUR CATALOG.</h1>
+    <p class="lede reveal">The core kit fixes your own list. The Pro upgrade gives you the right to sell the method — under your name, with your own clients.</p>
   </div>
-  <div class="scrollcue">scroll pour commencer</div>
+  <div class="scrollcue">scroll to begin</div>
 </header>
 
 <section class="thesis" id="thesis">
   <div class="wrap">
-    <div class="k reveal">Usage personnel vs usage commercial</div>
-    <h2 class="reveal">Le kit classique répare. <em>Pro te donne le droit de vendre.</em></h2>
-    <p class="body-txt reveal">Sans licence, tu peux appliquer la méthode à ta liste. Avec Pro, tu peux la revendre, la rebrander, et vendre des audits à des clients.</p>
+    <div class="k reveal">Personal use vs. commercial use</div>
+    <h2 class="reveal">The core kit fixes. <em>Pro gives you the right to sell.</em></h2>
+    <p class="body-txt reveal">Without a license, you can apply the method to your own list. With Pro, you can resell it, rebrand it, and sell audits to clients.</p>
     <div class="compare reveal">
       <div class="col">
-        <div class="colhead">Kit classique — 10$</div>
-        <p>Usage personnel / interne</p>
-        <p>Marque de Melody (GPTs &amp; Bots)</p>
+        <div class="colhead">Core Kit — $10</div>
+        <p>Personal / internal use</p>
+        <p>Under Melody's brand (GPTs &amp; Bots)</p>
         <p>Scorecard, Workbook, Prompts, Planners, Trackers</p>
-        <p>Objectif : réparer ta propre liste</p>
+        <p>Goal: fix your own list</p>
       </div>
       <div class="col pro">
-        <div class="colhead">Upgrade Pro — 17$</div>
-        <p>Usage commercial (revente, prestations)</p>
-        <p>Rebranding total sous ta marque</p>
-        <p>Licence, templates de vente, séquence de lancement</p>
-        <p>Objectif : vendre le kit ou des audits clients</p>
+        <div class="colhead">Pro Upgrade — $17</div>
+        <p>Commercial use (resale, services)</p>
+        <p>Full rebranding under your brand</p>
+        <p>License, sales templates, launch sequence</p>
+        <p>Goal: sell the kit or client audits</p>
       </div>
     </div>
   </div>
@@ -161,27 +158,27 @@ footer em{color:var(--accent);font-style:normal}
   <div class="wrap">
     <div class="grid">
       <div>
-        <div class="k reveal">Ce que contient l'upgrade</div>
-        <h2 class="reveal">10 outils. <em>La couche commerciale.</em></h2>
-        <p class="body-txt reveal">Le cadre juridique, la licence, la stratégie de marque et le matériel marketing pour commercialiser la méthode.</p>
+        <div class="k reveal">What's inside the upgrade</div>
+        <h2 class="reveal">10 tools. <em>The commercial layer.</em></h2>
+        <p class="body-txt reveal">The legal framework, license, brand strategy, and marketing assets to commercialize the method.</p>
         <div class="law reveal">
-          <div><b>Rebranding total :</b> nom, identité visuelle, ton — sans référence à Melody Wigdahl.</div>
-          <div><b>Licence claire :</b> droits de revente, usage client, usage personnel.</div>
-          <div>Rentabilise l'achat de départ en <b>actif commercial générateur de revenus.</b></div>
+          <div><b>Full rebranding:</b> name, visual identity, tone — no reference to Melody Wigdahl.</div>
+          <div><b>Clear licensing:</b> resale rights, client use, personal use.</div>
+          <div>Turns your initial purchase into a <b>revenue-generating commercial asset.</b></div>
         </div>
       </div>
       <div class="kitcard reveal">
-        <div class="bar"><span>Contenu · upgrade unique</span></div>
-        <div class="kititem"><span class="n">01</span><div><b>Rebranding Guide</b><span class="d">Personnaliser nom, identité et ton.</span></div></div>
-        <div class="kititem"><span class="n">02</span><div><b>Commercial-Use Framework</b><span class="d">Cadre des droits d'utilisation.</span></div></div>
-        <div class="kititem"><span class="n">03</span><div><b>License Template</b><span class="d">Modèle de contrat de licence utilisateur.</span></div></div>
-        <div class="kititem"><span class="n">04</span><div><b>Client-Use Models</b><span class="d">5 modèles de prestations clients.</span></div></div>
-        <div class="kititem"><span class="n">05</span><div><b>Pricing Architecture</b><span class="d">Grille d'architecture des prix.</span></div></div>
-        <div class="kititem"><span class="n">06</span><div><b>Naming &amp; Descriptions</b><span class="d">Idées de noms et fiches produit.</span></div></div>
-        <div class="kititem"><span class="n">07</span><div><b>Sales-Page Framework</b><span class="d">Structure complète de page de vente.</span></div></div>
-        <div class="kititem"><span class="n">08</span><div><b>5-Email Promo Pack</b><span class="d">Séquence de promotion prête à l'emploi.</span></div></div>
-        <div class="kititem"><span class="n">09</span><div><b>Social Promotional Copy</b><span class="d">Textes de promotion réseaux sociaux.</span></div></div>
-        <div class="kititem"><span class="n">10</span><div><b>Commercialization Checklist</b><span class="d">Checklist de mise en marché.</span></div></div>
+        <div class="bar"><span>Contents · one-time upgrade</span></div>
+        <div class="kititem"><span class="n">01</span><div><b>Rebranding Guide</b><span class="d">Customize name, identity, and tone.</span></div></div>
+        <div class="kititem"><span class="n">02</span><div><b>Commercial-Use Framework</b><span class="d">Clear usage rights breakdown.</span></div></div>
+        <div class="kititem"><span class="n">03</span><div><b>License Template</b><span class="d">End-user license agreement template.</span></div></div>
+        <div class="kititem"><span class="n">04</span><div><b>Client-Use Models</b><span class="d">5 done-for-you service models.</span></div></div>
+        <div class="kititem"><span class="n">05</span><div><b>Pricing Architecture</b><span class="d">A full pricing grid for your offers.</span></div></div>
+        <div class="kititem"><span class="n">06</span><div><b>Naming &amp; Descriptions</b><span class="d">Name ideas and product sheets.</span></div></div>
+        <div class="kititem"><span class="n">07</span><div><b>Sales-Page Framework</b><span class="d">A complete sales page structure.</span></div></div>
+        <div class="kititem"><span class="n">08</span><div><b>5-Email Promo Pack</b><span class="d">Ready-to-use promo sequence.</span></div></div>
+        <div class="kititem"><span class="n">09</span><div><b>Social Promotional Copy</b><span class="d">Social media promo copy.</span></div></div>
+        <div class="kititem"><span class="n">10</span><div><b>Commercialization Checklist</b><span class="d">Step-by-step launch checklist.</span></div></div>
       </div>
     </div>
   </div>
@@ -189,43 +186,43 @@ footer em{color:var(--accent);font-style:normal}
 
 <section class="lesson" id="models">
   <div class="wrap">
-    <div class="k reveal">5 modèles de prestation</div>
-    <h2 class="reveal">Vends la méthode. <em>Pas seulement le fichier.</em></h2>
-    <p class="body-txt reveal" style="margin-bottom:40px">La Scorecard et les Rescue Paths deviennent un service que tu factures — pas juste un produit numérique.</p>
+    <div class="k reveal">5 service models</div>
+    <h2 class="reveal">Sell the method. <em>Not just the file.</em></h2>
+    <p class="body-txt reveal" style="margin-bottom:40px">The Scorecard and Rescue Paths become a service you can bill for — not just a digital product.</p>
     <div class="paths reveal">
-      <div class="path"><div class="pn">DIY</div><h3>Audit</h3><p>Diagnostic livré, le client applique lui-même.</p></div>
-      <div class="path"><div class="pn">DWY</div><h3>Accompagnement</h3><p>Sessions guidées, le client exécute avec toi.</p></div>
-      <div class="path"><div class="pn">DFY</div><h3>Clé en main</h3><p>Tu exécutes le protocole pour le client.</p></div>
-      <div class="path"><div class="pn">CONSULTING</div><h3>Sessions</h3><p>Implémentation ou conseil facturé à la session.</p></div>
+      <div class="path"><div class="pn">DIY</div><h3>Audit</h3><p>You deliver the diagnosis, the client applies it.</p></div>
+      <div class="path"><div class="pn">DWY</div><h3>Done-With-You</h3><p>Guided sessions, the client executes with you.</p></div>
+      <div class="path"><div class="pn">DFY</div><h3>Done-For-You</h3><p>You run the protocol for the client.</p></div>
+      <div class="path"><div class="pn">CONSULTING</div><h3>Sessions</h3><p>Implementation or advisory, billed per session.</p></div>
     </div>
   </div>
 </section>
 
 <section class="band">
-  <h2 class="reveal">Un produit sous ta marque. <em>Sans repartir de zéro.</em></h2>
+  <h2 class="reveal">A product under your brand. <em>Without starting from scratch.</em></h2>
 </section>
 
 <section id="objections">
   <div class="wrap">
-    <div class="k reveal">Avant de prendre l'upgrade</div>
-    <h2 class="reveal">Ce que tu <em>dois savoir</em></h2>
+    <div class="k reveal">Before you upgrade</div>
+    <h2 class="reveal">What you <em>should know</em></h2>
     <div class="rows reveal">
-      <div class="rowitem"><span class="rn">01</span><div><div class="rq">Est-ce que j'ai les emails de campagne déjà rédigés ?</div><div class="ra">Non — le Campaign Vault (séquences prêtes à l'emploi) est vendu séparément. Pro fournit l'architecture, la licence et le matériel de vente.</div></div></div>
-      <div class="rowitem"><span class="rn">02</span><div><div class="rq">La licence fournie a-t-elle valeur légale ?</div><div class="ra">C'est un modèle éducatif/commercial, pas un avis juridique formel — une base de travail à faire valider si besoin.</div></div></div>
-      <div class="rowitem"><span class="rn">03</span><div><div class="rq">Est-ce prêt à vendre immédiatement ?</div><div class="ra">Il faut adapter la traduction, la marque et configurer ton propre tunnel de vente — le framework fait le plus gros du travail.</div></div></div>
+      <div class="rowitem"><span class="rn">01</span><div><div class="rq">Do I get the pre-written campaign emails?</div><div class="ra">No — the Campaign Vault (ready-to-send sequences) is sold separately. Pro gives you the architecture, license, and sales assets.</div></div></div>
+      <div class="rowitem"><span class="rn">02</span><div><div class="rq">Is the license legally binding?</div><div class="ra">It's an educational/commercial template, not formal legal advice — a working base you can have reviewed if needed.</div></div></div>
+      <div class="rowitem"><span class="rn">03</span><div><div class="rq">Is it ready to sell right away?</div><div class="ra">You'll need to adapt the branding and set up your own sales funnel — the framework does most of the heavy lifting.</div></div></div>
     </div>
   </div>
 </section>
 
 <section class="reserve">
-  <div class="k reveal">Upgrade unique</div>
-  <h2 class="reveal">Débloque <em>la licence.</em></h2>
+  <div class="k reveal">One-time upgrade</div>
+  <h2 class="reveal">Unlock <em>the license.</em></h2>
   <div class="price reveal"><sup>$</sup>17</div>
-  <a class="cta reveal" href="#">Débloquer l'upgrade Pro</a>
-  <p class="fine reveal">S'ajoute au kit de base ($10) — nécessaire pour revendre, rebrander ou vendre des audits clients.</p>
+  <a class="cta reveal" href="#">Unlock the Pro upgrade</a>
+  <p class="fine reveal">Adds to the core kit ($10) — required to resell, rebrand, or sell client audits.</p>
 </section>
 
-<footer><span>the rescue squad_ · <em>upgrade pro</em> · projet fictif d'entraînement</span></footer>
+<footer><span>the rescue squad_ · pro upgrade · fictional training project</span></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>

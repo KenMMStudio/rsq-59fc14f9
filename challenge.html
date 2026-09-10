@@ -163,7 +163,7 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 </head>
 <body>
 
-<div class="topbar">A 7-day action plan, one email — not a course to buy.</div>
+<div class="topbar">A 7-day action plan, sent on request — not a course to buy.</div>
 
 <nav>
   <a class="brand" href="en/index.html" style="text-decoration:none">THE RESCUE SQUAD<span class="dot"> ·</span> 7-DAY RESCUE CHALLENGE</a>
@@ -178,9 +178,9 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 </nav>
 
 <header class="hero">
-  <div class="eye">Free · 7-day plan · one email</div>
+  <div class="eye">Free · 7-day plan · sent on request</div>
   <h1>Bring your list back to life. <span class="squiggle">One day<svg class="uline" viewBox="0 0 110 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 Q 27 3, 55 8 T 108 7"/></svg></span> at a time.</h1>
-  <p class="lede">Get the 7-Day Rescue Challenge: a day-by-day action plan, sent to you in one email, to fix what's actually killing your open rate. No course to buy, no software to learn.</p>
+  <p class="lede">Enter your email to request the 7-Day Rescue Challenge — a day-by-day action plan to fix what's actually killing your open rate. We'll follow up with it. No course to buy, no software to learn.</p>
   <form class="diag-form" data-diag-form>
     <label class="hp" aria-hidden="true">Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
     <input type="email" name="email" placeholder="you@email.com" required>
@@ -221,7 +221,7 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
     <h2 class="reveal">7 days. <em>One plan.</em></h2>
     <p class="section-lede reveal">"A list of 500 relevant people can be more useful than a list of 10,000 disconnected addresses." This challenge isn't about growing your list — it's about fixing the one you have.</p>
     <div class="kitcard reveal">
-      <div class="bar">Your 7-day plan · delivered in one email</div>
+      <div class="bar">Your 7-day plan · sent on request</div>
       <div class="kititem"><span class="n">01–02</span><div><b>Diagnose</b><span class="d">See what's actually wrong with your list — dead or just ignored.</span></div></div>
       <div class="kititem"><span class="n">03–05</span><div><b>Reactivate</b><span class="d">Send the first emails back, the safe way — segmented, not blasted.</span></div></div>
       <div class="kititem"><span class="n">06–07</span><div><b>Stabilize</b><span class="d">Lock in a simple rhythm so the list doesn't go quiet again.</span></div></div>
@@ -367,7 +367,7 @@ document.querySelectorAll('[data-diag-form]').forEach(form=>{
       form.style.display = 'none';
       msg.textContent = FORM_CFG.mode === 'demo'
         ? "Thanks — demo mode: nothing was actually sent, but the form works."
-        : "You're in — check your inbox for your 7-day plan.";
+        : "Thanks — we'll follow up with your 7-day plan.";
       msg.className = 'form-msg ok';
     } catch(err){
       msg.textContent = "That didn't go through. Try again, or email us directly.";

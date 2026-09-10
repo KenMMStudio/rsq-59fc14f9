@@ -85,11 +85,15 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 .exhibit .ed{font-size:14px;color:var(--muted);max-width:56ch}
 @media(max-width:640px){.exhibit{grid-template-columns:1fr;gap:8px}}
 
-.blocdiag{background:#111111;color:var(--paper);text-align:center;padding:12vh 4vw}
-.blocdiag .k{color:#b7ff00}
-.blocdiag .stat{font-family:var(--disp);font-weight:800;font-size:clamp(52px,11vw,128px);line-height:1;letter-spacing:-.02em;color:#b7ff00}
-.blocdiag .cap{margin:22px auto 0;max-width:58ch;font-size:15px;color:#d9d2cc}
-.blocdiag .src{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a8480}
+.blocdiag{background:var(--paper);color:var(--ink);text-align:center;padding:12vh 4vw;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.blocdiag .k{color:var(--hot)}
+.blocdiag .stat{font-family:var(--disp);font-weight:800;font-size:clamp(52px,11vw,128px);line-height:1;letter-spacing:-.02em;color:var(--hot)}
+.blocdiag .cap{margin:22px auto 0;max-width:58ch;font-size:15px;color:var(--muted)}
+.blocdiag .src{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+.testbox{margin-top:32px;background:var(--paper);border:2px solid var(--denim);padding:26px 28px;max-width:70ch}
+.testbox .tb-k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--denim);margin-bottom:10px}
+.testbox p{font-size:15px;color:var(--ink);margin:0}
 
 .kitcard{background:var(--paper);border:2px solid var(--denim);margin-top:10px}
 .kitcard .bar{padding:14px 20px;border-bottom:2px solid var(--denim);font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--denim)}
@@ -171,12 +175,17 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 <section id="problem">
   <div class="wrap">
     <div class="k reveal">Sound familiar?</div>
-    <h2 class="reveal">The reasons your list went quiet.</h2>
-    <p class="section-lede reveal">You've tried the fixes. If your list still looks like this, it isn't your niche — it's the missing protocol.</p>
+    <h2 class="reveal">4 problems that look alike. <em>Only one is yours.</em></h2>
+    <p class="section-lede reveal">When email disappoints, the symptom is almost always the same: "my list isn't working." The real cause changes completely.</p>
     <div class="exhibits reveal">
-      <div class="exhibit"><span class="tag">Exhibit A</span><div><div class="eh">One bad send, then silence</div><div class="ed">Open rates dropped after a flop, so you stopped emailing — and every month of silence makes it worse.</div></div></div>
-      <div class="exhibit"><span class="tag">Exhibit B</span><div><div class="eh">You may have trained it to ignore you</div><div class="ed">Irregular sends, no follow-up, only promo when you do write — a list learns fast to stop opening. The list isn't the problem. The training it got is.</div></div></div>
-      <div class="exhibit"><span class="tag">Exhibit C</span><div><div class="eh">More contacts wouldn't fix it</div><div class="ed">If you added 1,000 people identical to the ones already on your list, would that solve anything? If the answer is no, your problem isn't size — it's the system.</div></div></div>
+      <div class="exhibit"><span class="tag">Build</span><div><div class="eh">You're attracting the wrong people</div><div class="ed">Too few relevant subscribers, or weak acquisition. The problem isn't list size — it's recruitment.</div></div></div>
+      <div class="exhibit"><span class="tag">Warm</span><div><div class="eh">You stopped writing, they stopped opening</div><div class="ed">Subscribers exist, but communication became inconsistent. The relationship went cold, not dead.</div></div></div>
+      <div class="exhibit"><span class="tag">Revive</span><div><div class="eh">Part of your list has gone dark</div><div class="ed">A meaningful chunk of the list is inactive. Not dead — just not in the conversation lately.</div></div></div>
+      <div class="exhibit"><span class="tag">Convert</span><div><div class="eh">They read you, but don't buy</div><div class="ed">The audience exists, sometimes even engages — but customer activity stays weak. The path to purchase isn't clear.</div></div></div>
+    </div>
+    <div class="testbox reveal">
+      <div class="tb-k">The 1,000-more test</div>
+      <p>If you added 1,000 people identical to the ones already on your list, would that solve your problem? If the answer is no, it isn't size — it's the system.</p>
     </div>
   </div>
 </section>
@@ -192,13 +201,19 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
   <div class="wrap">
     <div class="k reveal">What you get</div>
     <h2 class="reveal">Based on a real system. <em>Not a guess.</em></h2>
-    <p class="section-lede reveal">The diagnosis isn't pulled out of thin air — it comes from the same Scorecard that structures the whole Rescue Squad protocol.</p>
+    <p class="section-lede reveal">The diagnosis isn't pulled out of thin air — it comes from the same Scorecard that structures the whole Rescue Squad protocol. "A list of 500 relevant people can be more useful than a list of 10,000 disconnected addresses."</p>
     <div class="kitcard reveal">
       <div class="bar">Your diagnosis · delivered by email</div>
       <div class="kititem"><span class="n">01</span><div><b>Your score across the 8 real pillars</b><span class="d">List foundation, subscriber quality, consistency, engagement, relevance & trust, segmentation, buyer path, list hygiene.</span></div></div>
       <div class="kititem"><span class="n">02</span><div><b>Your priority Rescue Path</b><span class="d">Build, Warm, Revive, or Convert — one at a time, not all four at once.</span></div></div>
       <div class="kititem"><span class="n">03</span><div><b>The most likely cause</b><span class="d">Named in plain terms, not a guess.</span></div></div>
       <div class="kititem"><span class="n">04</span><div><b>A link to the full protocol</b><span class="d">If you want to go further — no obligation.</span></div></div>
+    </div>
+    <div class="steps reveal" style="margin-top:36px">
+      <div class="step"><span class="sn">Build</span><span class="sh">Attract</span><p>The right people, not just more of them.</p></div>
+      <div class="step"><span class="sn">Warm</span><span class="sh">Reconnect</span><p>Rebuild the relationship after the silence.</p></div>
+      <div class="step"><span class="sn">Revive</span><span class="sh">Re-engage</span><p>Bring a cold list back into the conversation.</p></div>
+      <div class="step"><span class="sn">Convert</span><span class="sh">Sell clearly</span><p>Make the path to purchase obvious.</p></div>
     </div>
   </div>
 </section>

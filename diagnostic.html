@@ -78,10 +78,6 @@ section{padding:9vh 4vw}
 h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line-height:1.06;letter-spacing:-.01em;margin-bottom:14px;max-width:22ch}
 .section-lede{max-width:60ch;color:var(--muted);font-size:16px;margin-bottom:44px}
 
-/* fade-up au scroll — dégradation gracieuse : reste visible si JS/IO indisponible */
-.reveal{opacity:1;transform:none}
-.reveal.io-ready{transition:opacity .7s ease, transform .7s ease}
-.reveal.io-pending{opacity:0;transform:translateY(28px)}
 
 .exhibits{border-top:1px solid var(--line)}
 .exhibit{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}
@@ -93,8 +89,8 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 /* Bloc Diagnostic — même charte que le reste : fond paper, chiffre clé en hot */
 .blocdiag{background:var(--paper);color:var(--ink);text-align:center;padding:12vh 4vw;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .blocdiag .k{color:var(--hot)}
-.blocdiag .stat{font-family:var(--disp);font-weight:800;font-size:clamp(52px,11vw,128px);line-height:1;letter-spacing:-.02em;color:var(--hot)}
-.blocdiag .cap{margin:22px auto 0;max-width:58ch;font-size:15px;color:var(--muted)}
+.blocdiag .cap{margin:0 auto;max-width:58ch;font-size:17px;color:var(--ink)}
+.blocdiag .cap b{color:var(--hot);font-weight:600}
 .blocdiag .src{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
 /* Callout — le test des 1000 en plus */
@@ -237,8 +233,7 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 
 <section class="blocdiag">
   <div class="k reveal">Ce que ce protocole a déjà fait</div>
-  <div class="stat reveal">0,8% → 22%</div>
-  <p class="cap reveal">Un créateur de formation avec 40 000 abonnés, prêt à tout recommencer à zéro. Un après-midi de diagnostic, un protocole de 14 jours, zéro contact supprimé.</p>
+  <p class="cap reveal">Un créateur de formation avec 40 000 abonnés, prêt à tout recommencer à zéro. Un après-midi de diagnostic, un protocole de 14 jours, zéro contact supprimé — le taux d'ouverture est passé de <b>0,8% à 22%</b> sans purge de liste.</p>
   <div class="src">The Rescue Squad · exemple fictif d'illustration, aucun client réel</div>
 </section>
 
@@ -457,22 +452,11 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
 })();
 </script>
 <script>
-if('IntersectionObserver' in window){
-  var els = document.querySelectorAll('.reveal');
-  els.forEach(function(el){ el.classList.add('io-ready','io-pending'); });
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){ entry.target.classList.remove('io-pending'); io.unobserve(entry.target); }
-    });
-  }, {threshold:0.12});
-  els.forEach(function(el){ io.observe(el); });
-}
-
 const PATH_INFO = {
-  build:   { label: 'BUILD — Attirer',        desc: "Les bonnes personnes, pas juste plus de monde. C'est le chemin à traiter en premier — le Rescue Kit le détaille étape par étape." },
-  warm:    { label: 'WARM — Reconnecter',     desc: "Reconstruire la relation après le silence. C'est le chemin à traiter en premier — le Rescue Kit le détaille étape par étape." },
-  revive:  { label: 'REVIVE — Réanimer',      desc: "Réengager une liste devenue froide. C'est le chemin à traiter en premier — le Rescue Kit le détaille étape par étape." },
-  convert: { label: 'CONVERT — Vendre clairement', desc: "Rendre le chemin vers l'achat évident. C'est le chemin à traiter en premier — le Rescue Kit le détaille étape par étape." }
+  build:   { name: 'Build',   headline: 'Attirer',           desc: "Les bonnes personnes, pas juste plus de monde. C'est le chemin à traiter en premier — le Rescue Kit le détaille étape par étape." },
+  warm:    { name: 'Warm',    headline: 'Reconnecter',       desc: "Reconstruire la relation après le silence. C'est le chemin à traiter en premier — le Rescue Kit le détaille étape par étape." },
+  revive:  { name: 'Revive',  headline: 'Réanimer',          desc: "Réengager une liste devenue froide. C'est le chemin à traiter en premier — le Rescue Kit le détaille étape par étape." },
+  convert: { name: 'Convert', headline: 'Vendre clairement', desc: "Rendre le chemin vers l'achat évident. C'est le chemin à traiter en premier — le Rescue Kit le détaille étape par étape." }
 };
 
 (function(){
@@ -493,9 +477,9 @@ const PATH_INFO = {
     answers.forEach(path => { if(path) scores[path]++; });
     const winner = Object.keys(scores).reduce((a,b) => scores[b] > scores[a] ? b : a);
     const info = PATH_INFO[winner];
-    quiz.querySelector('[data-result-path]').textContent = info.label;
+    quiz.querySelector('[data-result-path]').textContent = info.headline;
     quiz.querySelector('[data-result-desc]').textContent = info.desc;
-    quiz.querySelector('[data-result-hidden]').value = info.label;
+    quiz.querySelector('[data-result-hidden]').value = info.name;
     showStep(steps.length - 1);
   }
 

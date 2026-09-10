@@ -76,9 +76,6 @@ section{padding:9vh 4vw}
 h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line-height:1.06;letter-spacing:-.01em;margin-bottom:14px;max-width:22ch}
 .section-lede{max-width:60ch;color:var(--muted);font-size:16px;margin-bottom:44px}
 
-.reveal{opacity:1;transform:none}
-.reveal.io-ready{transition:opacity .7s ease, transform .7s ease}
-.reveal.io-pending{opacity:0;transform:translateY(28px)}
 
 .exhibits{border-top:1px solid var(--line)}
 .exhibit{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}
@@ -89,8 +86,8 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 
 .blocdiag{background:var(--paper);color:var(--ink);text-align:center;padding:12vh 4vw;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .blocdiag .k{color:var(--hot)}
-.blocdiag .stat{font-family:var(--disp);font-weight:800;font-size:clamp(52px,11vw,128px);line-height:1;letter-spacing:-.02em;color:var(--hot)}
-.blocdiag .cap{margin:22px auto 0;max-width:58ch;font-size:15px;color:var(--muted)}
+.blocdiag .cap{margin:0 auto;max-width:58ch;font-size:17px;color:var(--ink)}
+.blocdiag .cap b{color:var(--hot);font-weight:600}
 .blocdiag .src{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
 .testbox{margin-top:32px;background:var(--paper);border:2px solid var(--denim);padding:26px 28px;max-width:70ch}
@@ -217,8 +214,7 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 
 <section class="blocdiag">
   <div class="k reveal">What this protocol has already done</div>
-  <div class="stat reveal">0.8% → 22%</div>
-  <p class="cap reveal">A course creator with 40,000 subscribers, ready to start over from zero. One afternoon of diagnosis, a 14-day protocol, zero contacts deleted.</p>
+  <p class="cap reveal">A course creator with 40,000 subscribers, ready to start over from zero. One afternoon of diagnosis, a 14-day protocol, zero contacts deleted — open rate went from <b>0.8% to 22%</b> with no list purge.</p>
   <div class="src">The Rescue Squad · fictional illustration example, no real client</div>
 </section>
 
@@ -437,22 +433,11 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 })();
 </script>
 <script>
-if('IntersectionObserver' in window){
-  var els = document.querySelectorAll('.reveal');
-  els.forEach(function(el){ el.classList.add('io-ready','io-pending'); });
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){ entry.target.classList.remove('io-pending'); io.unobserve(entry.target); }
-    });
-  }, {threshold:0.12});
-  els.forEach(function(el){ io.observe(el); });
-}
-
 const PATH_INFO = {
-  build:   { label: 'BUILD — Attract',       desc: "The right people, not just more of them. That's the path to treat first — the Rescue Kit breaks it down step by step." },
-  warm:    { label: 'WARM — Reconnect',      desc: "Rebuild the relationship after the silence. That's the path to treat first — the Rescue Kit breaks it down step by step." },
-  revive:  { label: 'REVIVE — Re-engage',    desc: "Bring a cold list back into the conversation. That's the path to treat first — the Rescue Kit breaks it down step by step." },
-  convert: { label: 'CONVERT — Sell clearly', desc: "Make the path to purchase obvious. That's the path to treat first — the Rescue Kit breaks it down step by step." }
+  build:   { name: 'Build',   headline: 'Attract',       desc: "The right people, not just more of them. That's the path to treat first — the Rescue Kit breaks it down step by step." },
+  warm:    { name: 'Warm',    headline: 'Reconnect',     desc: "Rebuild the relationship after the silence. That's the path to treat first — the Rescue Kit breaks it down step by step." },
+  revive:  { name: 'Revive',  headline: 'Re-engage',     desc: "Bring a cold list back into the conversation. That's the path to treat first — the Rescue Kit breaks it down step by step." },
+  convert: { name: 'Convert', headline: 'Sell clearly',  desc: "Make the path to purchase obvious. That's the path to treat first — the Rescue Kit breaks it down step by step." }
 };
 
 (function(){
@@ -473,9 +458,9 @@ const PATH_INFO = {
     answers.forEach(path => { if(path) scores[path]++; });
     const winner = Object.keys(scores).reduce((a,b) => scores[b] > scores[a] ? b : a);
     const info = PATH_INFO[winner];
-    quiz.querySelector('[data-result-path]').textContent = info.label;
+    quiz.querySelector('[data-result-path]').textContent = info.headline;
     quiz.querySelector('[data-result-desc]').textContent = info.desc;
-    quiz.querySelector('[data-result-hidden]').value = info.label;
+    quiz.querySelector('[data-result-hidden]').value = info.name;
     showStep(steps.length - 1);
   }
 

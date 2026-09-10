@@ -92,8 +92,7 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(32px,4.6vw,64px);line
 .spine .sh{font-family:var(--disp);font-weight:700;color:var(--ink);font-size:15px}
 
 .rows{margin-top:10px;display:grid;gap:0;border-top:1px solid var(--line)}
-.rowitem{display:grid;grid-template-columns:50px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
-.rowitem .rn{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.rowitem{padding:24px 0;border-bottom:1px solid var(--line)}
 .rowitem .rq{font-family:var(--disp);font-weight:700;font-size:16px;margin-bottom:6px}
 .rowitem .ra{font-size:14px;color:var(--muted)}
 
@@ -253,9 +252,9 @@ footer em{color:var(--accent);font-style:normal}
     <div class="k reveal">Before you buy</div>
     <h2 class="reveal">What you're <em>probably wondering</em></h2>
     <div class="rows reveal">
-      <div class="rowitem"><span class="rn">01</span><div><div class="rq">My list is too old, too messy — nothing will save it?</div><div class="ra">The Scorecard objectively assesses your list's real state before any treatment. No blind diagnosis.</div></div></div>
-      <div class="rowitem"><span class="rn">02</span><div><div class="rq">Won't I lose even more subscribers if I re-engage?</div><div class="ra">The Revive path segments before it reaches out — never a blind mass send.</div></div></div>
-      <div class="rowitem"><span class="rn">03</span><div><div class="rq">I don't have time to learn a whole new system?</div><div class="ra">Ready-to-use checklists, trackers, and AI prompts — no theory to digest.</div></div></div>
+      <div class="rowitem"><div class="rq">My list is too old, too messy — nothing will save it?</div><div class="ra">The Scorecard objectively assesses your list's real state before any treatment. No blind diagnosis.</div></div>
+      <div class="rowitem"><div class="rq">Won't I lose even more subscribers if I re-engage?</div><div class="ra">The Revive path segments before it reaches out — never a blind mass send.</div></div>
+      <div class="rowitem"><div class="rq">I don't have time to learn a whole new system?</div><div class="ra">Ready-to-use checklists, trackers, and AI prompts — no theory to digest.</div></div>
     </div>
   </div>
 </section>
@@ -284,17 +283,10 @@ footer em{color:var(--accent);font-style:normal}
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script>
 if (typeof gsap !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
   gsap.set('.hero > div:first-child > *',{y:50,opacity:0});
   gsap.to('.hero > div:first-child > *',{y:0,opacity:1,duration:1.2,ease:'power3.out',stagger:0.12,delay:0.2});
-  document.querySelectorAll('.reveal').forEach(el=>{
-    if(el.closest('.hero')) return;
-    gsap.set(el,{opacity:0,y:40});
-    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
-  });
   // Filet de securite : si le ticker GSAP ne tourne pas (onglet en arriere-plan au chargement, throttling navigateur),
   // le hero ne doit jamais rester invisible durablement.
   setTimeout(function(){

@@ -15,7 +15,6 @@
   --ink: oklch(0.94 0.01 70);
   --muted: oklch(0.62 0.02 80);
   --accent: oklch(0.78 0.11 85);
-  --accent2: oklch(0.85 0.19 115);
   --line: oklch(0.30 0.02 85);
   --disp:'Bricolage Grotesque',sans-serif;
   --sans:'Inter',sans-serif;
@@ -80,11 +79,12 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.4vw,60px);line
 .kititem b{display:block;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:13px;margin-bottom:2px}
 .kititem span.d{color:var(--muted)}
 
-.paths{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.path{background:var(--bg2);padding:24px 20px}
-.path .pn{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.14em}
-.path h3{font-family:var(--disp);font-weight:700;font-size:17px;text-transform:uppercase;margin:8px 0 8px}
-.path p{font-size:13px;color:var(--muted)}
+.pathrows{margin-top:10px;border-top:1px solid var(--line)}
+.pathrow{display:grid;grid-template-columns:110px 190px 1fr;gap:24px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--line)}
+.pathrow .pn{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.pathrow .ph{font-family:var(--disp);font-weight:700;font-size:20px;text-transform:uppercase}
+.pathrow p{font-size:14px;color:var(--muted);margin:0}
+@media(max-width:700px){.pathrow{grid-template-columns:1fr}}
 
 .band{padding:22vh 4vw;text-align:center}
 .band h2{max-width:24ch;margin:0 auto}
@@ -189,11 +189,11 @@ footer em{color:var(--accent);font-style:normal}
     <div class="k reveal">5 service models</div>
     <h2 class="reveal">Sell the method. <em>Not just the file.</em></h2>
     <p class="body-txt reveal" style="margin-bottom:40px">The Scorecard and Rescue Paths become a service you can bill for — not just a digital product.</p>
-    <div class="paths reveal">
-      <div class="path"><div class="pn">DIY</div><h3>Audit</h3><p>You deliver the diagnosis, the client applies it.</p></div>
-      <div class="path"><div class="pn">DWY</div><h3>Done-With-You</h3><p>Guided sessions, the client executes with you.</p></div>
-      <div class="path"><div class="pn">DFY</div><h3>Done-For-You</h3><p>You run the protocol for the client.</p></div>
-      <div class="path"><div class="pn">CONSULTING</div><h3>Sessions</h3><p>Implementation or advisory, billed per session.</p></div>
+    <div class="pathrows reveal">
+      <div class="pathrow"><span class="pn">DIY</span><span class="ph">Audit</span><p>You deliver the diagnosis, the client applies it.</p></div>
+      <div class="pathrow"><span class="pn">DWY</span><span class="ph">Done-With-You</span><p>Guided sessions, the client executes with you.</p></div>
+      <div class="pathrow"><span class="pn">DFY</span><span class="ph">Done-For-You</span><p>You run the protocol for the client.</p></div>
+      <div class="pathrow"><span class="pn">CONSULTING</span><span class="ph">Sessions</span><p>Implementation or advisory, billed per session.</p></div>
     </div>
   </div>
 </section>

@@ -15,8 +15,7 @@
   --bg2: oklch(0.19 0.025 350);
   --ink: oklch(0.94 0.01 60);
   --muted: oklch(0.62 0.02 350);
-  --accent: oklch(0.68 0.23 355);      /* seul accent engagé : le rose "hot" de la charte */
-  --accent2: oklch(0.85 0.19 115);     /* neon, utilisé une fois pour le contraste avant/après */
+  --accent: oklch(0.68 0.23 355);      /* seul accent engagé sur cette page : le rose "hot" de la charte */
   --gold: oklch(0.78 0.11 85);
   --line: oklch(0.30 0.02 350);
   --disp:'Bricolage Grotesque',sans-serif;
@@ -60,14 +59,7 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(32px,4.6vw,64px);line
 .body-txt{max-width:62ch;color:var(--muted);font-size:17px}
 .body-txt b{color:var(--ink)}
 
-/* thesis + swatches */
 .thesis h2{max-width:20ch}
-.swatches{display:flex;gap:24px;align-items:center;margin-top:34px}
-.stat{font-family:var(--disp);font-weight:800;font-size:clamp(32px,5vw,56px)}
-.stat.before{color:var(--muted);text-decoration:line-through}
-.stat.after{color:var(--accent2)}
-.arrow{color:var(--muted);font-size:22px}
-.stat-label{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 
 /* lesson-style grid */
 .lesson .grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:start}
@@ -88,11 +80,12 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(32px,4.6vw,64px);line
 .kititem.bonus b{color:var(--gold)}
 
 /* paths */
-.paths{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.path{background:var(--bg2);padding:26px 22px}
-.path .pn{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.14em}
-.path h3{font-family:var(--disp);font-weight:700;font-size:20px;text-transform:uppercase;margin:8px 0 8px}
-.path p{font-size:13px;color:var(--muted)}
+.pathrows{margin-top:10px;border-top:1px solid var(--line)}
+.pathrow{display:grid;grid-template-columns:60px 190px 1fr;gap:24px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--line)}
+.pathrow .pn{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.pathrow .ph{font-family:var(--disp);font-weight:700;font-size:22px;text-transform:uppercase}
+.pathrow p{font-size:14px;color:var(--muted);margin:0}
+@media(max-width:700px){.pathrow{grid-template-columns:1fr}}
 
 /* band */
 .band{padding:22vh 4vw;text-align:center}
@@ -112,7 +105,7 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(32px,4.6vw,64px);line
 .rowitem .ra{font-size:14px;color:var(--muted)}
 
 .reserve{text-align:center;padding:22vh 4vw}
-.price{font-family:var(--disp);font-weight:800;font-size:clamp(48px,8vw,88px);color:var(--accent2);margin:20px 0}
+.price{font-family:var(--disp);font-weight:800;font-size:clamp(48px,8vw,88px);color:var(--accent);margin:20px 0}
 .price sup{font-size:.4em;vertical-align:top;color:var(--muted)}
 .cta{display:inline-block;margin-top:20px;font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;
   border:1px solid var(--accent);color:var(--accent);padding:18px 44px;border-radius:999px;text-decoration:none;transition:.3s}
@@ -154,12 +147,7 @@ footer em{color:var(--accent);font-style:normal}
   <div class="wrap">
     <div class="k reveal">Ce qu'on a appris sur les listes qu'on croit finies</div>
     <h2 class="reveal">Le problème n'est presque jamais la liste. <em>C'est l'absence de protocole.</em></h2>
-    <p class="body-txt reveal">Un créateur avec 40 000 abonnés, prêt à tout recommencer à zéro. Diagnostic en un après-midi, protocole en 14 jours, zéro contact supprimé.</p>
-    <div class="swatches reveal">
-      <div><div class="stat-label">Avant</div><div class="stat before">0,8%</div></div>
-      <div class="arrow">→</div>
-      <div><div class="stat-label" style="color:var(--accent2)">Après 14 jours</div><div class="stat after">22%</div></div>
-    </div>
+    <p class="body-txt reveal">Un créateur avec 40 000 abonnés, prêt à tout recommencer à zéro. Diagnostic en un après-midi, protocole en 14 jours, zéro contact supprimé — le taux d'ouverture est passé de <b>0,8% à 22%</b> sans purge de liste.</p>
   </div>
 </section>
 
@@ -197,11 +185,11 @@ footer em{color:var(--accent);font-style:normal}
     <div class="k reveal">La règle de l'unique parcours</div>
     <h2 class="reveal">Choisis <em>un</em> problème. Pas cinq.</h2>
     <p class="body-txt reveal" style="margin-bottom:40px">Le Scorecard révèle ton parcours prioritaire parmi les 4 — pour arrêter de tout réparer en même temps.</p>
-    <div class="paths reveal">
-      <div class="path"><div class="pn">01 · BUILD</div><h3>Construire</h3><p>Attirer les bons abonnés — listes à créer ou fragiles.</p></div>
-      <div class="path"><div class="pn">02 · WARM</div><h3>Réchauffer</h3><p>Reconstruire la relation — listes délaissées ou irrégulières.</p></div>
-      <div class="path"><div class="pn">03 · REVIVE</div><h3>Réanimer</h3><p>Reconnecter avec les inactifs — listes froides et désengagées.</p></div>
-      <div class="path"><div class="pn">04 · CONVERT</div><h3>Convertir</h3><p>Clarifier le parcours d'achat — listes actives qui ne vendent pas.</p></div>
+    <div class="pathrows reveal">
+      <div class="pathrow"><span class="pn">01</span><span class="ph">Build</span><p>Attirer les bons abonnés — listes à créer ou fragiles.</p></div>
+      <div class="pathrow"><span class="pn">02</span><span class="ph">Warm</span><p>Reconstruire la relation — listes délaissées ou irrégulières.</p></div>
+      <div class="pathrow"><span class="pn">03</span><span class="ph">Revive</span><p>Reconnecter avec les inactifs — listes froides et désengagées.</p></div>
+      <div class="pathrow"><span class="pn">04</span><span class="ph">Convert</span><p>Clarifier le parcours d'achat — listes actives qui ne vendent pas.</p></div>
     </div>
   </div>
 </section>

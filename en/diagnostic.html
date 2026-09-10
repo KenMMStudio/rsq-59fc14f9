@@ -134,17 +134,25 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 .finalcta .fine{max-width:400px;margin-left:auto;margin-right:auto}
 .finalcta h2{margin-left:auto;margin-right:auto}
 
-footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted)}
-
-.cookiebar{position:fixed;left:20px;bottom:20px;max-width:340px;background:var(--ink);border:2px solid var(--ink);
-  box-shadow:4px 4px 0 rgba(0,0,0,.2);padding:20px;z-index:200}
-.cookiebar p{font-size:13px;line-height:1.5;color:#efe8e2;margin-bottom:16px}
-.cookiebtns{display:flex;gap:10px;justify-content:flex-end}
-.btn-outline{background:transparent;color:var(--paper);border:1px solid rgba(255,255,255,.35);padding:9px 16px;
-  font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer}
-.btn-outline:hover{border-color:rgba(255,255,255,.7)}
-.cookiebar .btn-sticker.small{box-shadow:3px 3px 0 rgba(0,0,0,.3)}
-@media(max-width:480px){.cookiebar{left:12px;right:12px;max-width:none;bottom:12px}}
+/* Quiz — 6 questions, one at a time, scores a path (Build/Warm/Revive/Convert) */
+.quiz{max-width:640px;margin:0 auto}
+.quiz-progress{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.quiz-step{display:none}
+.quiz-step.active{display:block}
+.quiz-q{font-family:var(--disp);font-weight:700;font-size:clamp(20px,3.2vw,28px);margin-bottom:26px;line-height:1.2}
+.quiz-opts{display:flex;flex-direction:column;gap:12px}
+.quiz-opt{display:block;border:2px solid var(--ink);background:var(--paper);padding:16px 20px;cursor:pointer;font-size:15px;
+  text-align:left;transition:transform .15s ease, box-shadow .15s ease}
+.quiz-opt:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px}
+.quiz-back{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  background:none;border:none;cursor:pointer;padding:8px 0}
+.quiz-back:disabled{opacity:0;pointer-events:none}
+.quiz-result{text-align:center}
+.quiz-result .rk{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:10px}
+.quiz-result .path{font-family:var(--disp);font-weight:800;font-size:clamp(32px,6vw,56px);color:var(--ink);margin:6px 0 4px;letter-spacing:-.02em}
+.quiz-result .pathdesc{color:var(--muted);font-size:15px;max-width:46ch;margin:0 auto 30px}
+.quiz-result .diag-form{justify-content:center}
 
 @media(max-width:600px){
   .diag-form{flex-direction:column}
@@ -160,20 +168,15 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
   <span class="brand">THE RESCUE SQUAD<span class="dot"> ·</span> FREE DIAGNOSIS</span>
   <div class="navright">
     <a class="lang" href="../diagnostic.html">FR</a>
-    <a class="btn-sticker small" href="#cta">Start</a>
+    <a class="btn-sticker small" href="#quiz">Start</a>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="eye">Free · 2 minutes · by email</div>
+  <div class="eye">Free · 2 minutes · instant result</div>
   <h1>Your list isn't opening. Let's find out <span class="squiggle">why<svg class="uline" viewBox="0 0 90 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 Q 22 3, 45 8 T 88 7"/></svg></span>.</h1>
-  <p class="lede">Answer 6 questions about your list. Get your diagnosis by email: what's killing your open rate, and the order to fix it in.</p>
-  <form class="diag-form" data-diag-form>
-    <label class="hp" aria-hidden="true">Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
-    <input type="email" name="email" placeholder="you@email.com" required>
-    <button type="submit" class="btn-sticker">Get my free diagnosis</button>
-  </form>
-  <div class="form-msg" data-diag-msg></div>
+  <p class="lede">Answer 6 questions about your list. Your diagnosis — what's killing your open rate, and the order to fix it in — shows up instantly on screen.</p>
+  <a href="#quiz" class="btn-sticker" style="margin-top:30px;display:inline-block">Get my free diagnosis</a>
   <p class="fine">No commitment, no card required. Just your diagnosis.</p>
 </header>
 
@@ -208,7 +211,7 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
     <h2 class="reveal">Based on a real system. <em>Not a guess.</em></h2>
     <p class="section-lede reveal">The diagnosis isn't pulled out of thin air — it comes from the same Scorecard that structures the whole Rescue Squad protocol. "A list of 500 relevant people can be more useful than a list of 10,000 disconnected addresses."</p>
     <div class="kitcard reveal">
-      <div class="bar">Your diagnosis · delivered by email</div>
+      <div class="bar">Your diagnosis · shown on screen</div>
       <div class="kititem"><span class="n">01</span><div><b>Your score across the 8 real pillars</b><span class="d">List foundation, subscriber quality, consistency, engagement, relevance & trust, segmentation, buyer path, list hygiene.</span></div></div>
       <div class="kititem"><span class="n">02</span><div><b>Your priority Rescue Path</b><span class="d">Build, Warm, Revive, or Convert — one at a time, not all four at once.</span></div></div>
       <div class="kititem"><span class="n">03</span><div><b>The most likely cause</b><span class="d">Named in plain terms, not a guess.</span></div></div>
@@ -229,7 +232,7 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
     <h2 class="reveal">Three steps. <em>No guessing.</em></h2>
     <div class="steps reveal">
       <div class="step"><span class="sn">01</span><span class="sh">Answer</span><p>6 quick questions about your list — no technical knowledge needed.</p></div>
-      <div class="step"><span class="sn">02</span><span class="sh">Receive</span><p>Your diagnosis lands in your inbox: what's actually wrong, in plain English.</p></div>
+      <div class="step"><span class="sn">02</span><span class="sh">See it</span><p>Your diagnosis shows up on screen: what's actually wrong, in plain English.</p></div>
       <div class="step"><span class="sn">03</span><span class="sh">Fix, in order</span><p>The exact sequence to run — not a pile of tips to sort through yourself.</p></div>
     </div>
   </div>
@@ -271,7 +274,7 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
       </details>
       <details>
         <summary>Will this get me flagged as spam?</summary>
-        <p class="fa">You're not sending anything to your list here — this only asks you 6 questions and emails the diagnosis back to you. What you do with it afterward is up to you.</p>
+        <p class="fa">You're not sending anything to your list here — this only asks you 6 questions and shows your diagnosis on screen. Your email only matters if you want us to follow up with the Rescue Kit link.</p>
       </details>
       <details>
         <summary>What happens after I get my diagnosis?</summary>
@@ -285,16 +288,100 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
   </div>
 </section>
 
-<section class="finalcta" id="cta">
+<section class="finalcta" id="quiz">
   <div class="k reveal">Diagnose before treatment</div>
   <h2 class="reveal">Get <em>your diagnosis.</em></h2>
-  <form class="diag-form reveal" data-diag-form>
-    <label class="hp" aria-hidden="true">Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
-    <input type="email" name="email" placeholder="you@email.com" required>
-    <button type="submit" class="btn-sticker">Get my free diagnosis</button>
-  </form>
-  <div class="form-msg" data-diag-msg></div>
-  <p class="fine">No commitment, no card required. Just your diagnosis.</p>
+  <div class="quiz reveal" data-quiz>
+
+    <div class="quiz-step active" data-step="0">
+      <div class="quiz-progress">Question 1 / 6</div>
+      <div class="quiz-q">When did you last send an email to your list?</div>
+      <div class="quiz-opts">
+        <button type="button" class="quiz-opt" data-path="build">Never, or almost never</button>
+        <button type="button" class="quiz-opt" data-path="warm">More than 6 months ago</button>
+        <button type="button" class="quiz-opt" data-path="revive">Regularly, but almost no one reacts</button>
+        <button type="button" class="quiz-opt" data-path="convert">Regularly, and open rates are decent</button>
+      </div>
+      <div class="quiz-nav"><button type="button" class="quiz-back" data-back disabled>← Back</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="1">
+      <div class="quiz-progress">Question 2 / 6</div>
+      <div class="quiz-q">How would you describe your current subscribers?</div>
+      <div class="quiz-opts">
+        <button type="button" class="quiz-opt" data-path="build">Few of them, and poorly targeted</button>
+        <button type="button" class="quiz-opt" data-path="warm">Plenty, but quiet for a while now</button>
+        <button type="button" class="quiz-opt" data-path="revive">A large chunk doesn't react at all anymore</button>
+        <button type="button" class="quiz-opt" data-path="convert">They read, but don't buy</button>
+      </div>
+      <div class="quiz-nav"><button type="button" class="quiz-back" data-back>← Back</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="2">
+      <div class="quiz-progress">Question 3 / 6</div>
+      <div class="quiz-q">Your average open rate — you'd say it's...</div>
+      <div class="quiz-opts">
+        <button type="button" class="quiz-opt" data-path="build">I honestly don't know</button>
+        <button type="button" class="quiz-opt" data-path="warm">It's dropped in recent months</button>
+        <button type="button" class="quiz-opt" data-path="revive">Low for a long time, on a big chunk of the list</button>
+        <button type="button" class="quiz-opt" data-path="convert">Decent, but sales don't follow</button>
+      </div>
+      <div class="quiz-nav"><button type="button" class="quiz-back" data-back>← Back</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="3">
+      <div class="quiz-progress">Question 4 / 6</div>
+      <div class="quiz-q">Your last sale made through email?</div>
+      <div class="quiz-opts">
+        <button type="button" class="quiz-opt" data-path="build">I've never sold anything by email</button>
+        <button type="button" class="quiz-opt" data-path="warm">A while ago, it used to work better</button>
+        <button type="button" class="quiz-opt" data-path="revive">Almost never, the list feels "dead"</button>
+        <button type="button" class="quiz-opt" data-path="convert">It happens, but less than the audience should allow</button>
+      </div>
+      <div class="quiz-nav"><button type="button" class="quiz-back" data-back>← Back</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="4">
+      <div class="quiz-progress">Question 5 / 6</div>
+      <div class="quiz-q">What's your biggest blocker right now?</div>
+      <div class="quiz-opts">
+        <button type="button" class="quiz-opt" data-path="build">Attracting the right people</button>
+        <button type="button" class="quiz-opt" data-path="warm">Getting back into a regular writing habit</button>
+        <button type="button" class="quiz-opt" data-path="revive">Waking up inactive subscribers</button>
+        <button type="button" class="quiz-opt" data-path="convert">Making the path to purchase clear</button>
+      </div>
+      <div class="quiz-nav"><button type="button" class="quiz-back" data-back>← Back</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="5">
+      <div class="quiz-progress">Question 6 / 6</div>
+      <div class="quiz-q">If you could only pick one priority for the next 30 days?</div>
+      <div class="quiz-opts">
+        <button type="button" class="quiz-opt" data-path="build">Build a genuinely qualified list</button>
+        <button type="button" class="quiz-opt" data-path="warm">Get back to a regular sending rhythm</button>
+        <button type="button" class="quiz-opt" data-path="revive">Re-engage dormant subscribers</button>
+        <button type="button" class="quiz-opt" data-path="convert">Turn readers into customers</button>
+      </div>
+      <div class="quiz-nav"><button type="button" class="quiz-back" data-back>← Back</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="result">
+      <div class="quiz-result">
+        <div class="rk">Your priority path</div>
+        <div class="path" data-result-path>—</div>
+        <p class="pathdesc" data-result-desc></p>
+        <form class="diag-form" data-diag-form>
+          <label class="hp" aria-hidden="true">Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+          <input type="hidden" name="diagnosis_path" data-result-hidden>
+          <input type="email" name="email" placeholder="you@email.com" required>
+          <button type="submit" class="btn-sticker">Follow up with the Rescue Kit link</button>
+        </form>
+        <div class="form-msg" data-diag-msg></div>
+        <p class="fine">Optional — your diagnosis is already shown above. No commitment, no card required.</p>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <footer>the rescue squad_ · free diagnosis · fictional training project</footer>
@@ -307,6 +394,7 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
   </div>
 </div>
 
+<script src="../form-config.js"></script>
 <script>
 (function(){
   try{ if(localStorage.getItem('rsq_cookie_choice')) return; }catch(e){}
@@ -330,9 +418,66 @@ if('IntersectionObserver' in window){
   els.forEach(function(el){ io.observe(el); });
 }
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnpqlyqa';
+const PATH_INFO = {
+  build:   { label: 'BUILD — Attract',       desc: "The right people, not just more of them. That's the path to treat first — the Rescue Kit breaks it down step by step." },
+  warm:    { label: 'WARM — Reconnect',      desc: "Rebuild the relationship after the silence. That's the path to treat first — the Rescue Kit breaks it down step by step." },
+  revive:  { label: 'REVIVE — Re-engage',    desc: "Bring a cold list back into the conversation. That's the path to treat first — the Rescue Kit breaks it down step by step." },
+  convert: { label: 'CONVERT — Sell clearly', desc: "Make the path to purchase obvious. That's the path to treat first — the Rescue Kit breaks it down step by step." }
+};
+
+(function(){
+  const quiz = document.querySelector('[data-quiz]');
+  if(!quiz) return;
+  const steps = Array.from(quiz.querySelectorAll('.quiz-step'));
+  const questionCount = steps.length - 1;
+  const answers = new Array(questionCount).fill(null);
+  let current = 0;
+
+  function showStep(index){
+    steps.forEach(s => s.classList.remove('active'));
+    steps[index].classList.add('active');
+  }
+
+  function showResult(){
+    const scores = { build:0, warm:0, revive:0, convert:0 };
+    answers.forEach(path => { if(path) scores[path]++; });
+    const winner = Object.keys(scores).reduce((a,b) => scores[b] > scores[a] ? b : a);
+    const info = PATH_INFO[winner];
+    quiz.querySelector('[data-result-path]').textContent = info.label;
+    quiz.querySelector('[data-result-desc]').textContent = info.desc;
+    quiz.querySelector('[data-result-hidden]').value = info.label;
+    showStep(steps.length - 1);
+  }
+
+  steps.forEach((step, index) => {
+    if(step.dataset.step === 'result') return;
+    step.querySelectorAll('.quiz-opt').forEach(opt => {
+      opt.addEventListener('click', () => {
+        answers[index] = opt.dataset.path;
+        if(index < questionCount - 1){
+          current = index + 1;
+          showStep(current);
+        } else {
+          showResult();
+        }
+      });
+    });
+    const back = step.querySelector('[data-back]');
+    if(back){
+      back.addEventListener('click', () => {
+        if(index === 0) return;
+        current = index - 1;
+        showStep(current);
+      });
+    }
+  });
+})();
+
+const FORM_CFG = window.RSQ_FORM_CONFIG || { mode:'demo', endpoints:{} };
+const FORMSPREE_ENDPOINT = FORM_CFG.endpoints.diagnostic || 'https://formspree.io/f/xnpqlyqa';
 
 document.querySelectorAll('[data-diag-form]').forEach(form=>{
+  const originalLabel = form.querySelector('button').textContent;
   form.addEventListener('submit', async (e)=>{
     e.preventDefault();
     const msg = form.parentElement.querySelector('[data-diag-msg]') || form.nextElementSibling;
@@ -344,23 +489,26 @@ document.querySelectorAll('[data-diag-form]').forEach(form=>{
     btn.textContent = 'Sending...';
 
     try{
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method:'POST',
-        headers:{'Accept':'application/json'},
-        body:new FormData(form)
-      });
-      if(res.ok){
-        form.style.display = 'none';
-        msg.textContent = 'Thanks — check your inbox, your diagnosis is on its way.';
-        msg.className = 'form-msg ok';
+      if(FORM_CFG.mode === 'demo'){
+        await new Promise(r => setTimeout(r, 500));
       } else {
-        throw new Error('bad response');
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method:'POST',
+          headers:{'Accept':'application/json'},
+          body:new FormData(form)
+        });
+        if(!res.ok) throw new Error('bad response');
       }
+      form.style.display = 'none';
+      msg.textContent = FORM_CFG.mode === 'demo'
+        ? "Thanks — demo mode: nothing was actually sent, but the form works."
+        : "Thanks — we'll follow up with the link for your path.";
+      msg.className = 'form-msg ok';
     } catch(err){
       msg.textContent = "That didn't go through. Try again, or email us directly.";
       msg.className = 'form-msg err';
       btn.disabled = false;
-      btn.textContent = 'Get my free diagnosis';
+      btn.textContent = originalLabel;
     }
   });
 });

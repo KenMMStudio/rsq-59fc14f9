@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mode démo · The Rescue Squad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: oklch(0.16 0.02 350);
+  --ink: oklch(0.94 0.01 60);
+  --muted: oklch(0.62 0.02 350);
+  --accent: oklch(0.68 0.23 355);
+  --line: oklch(0.30 0.02 350);
+  --disp:'Bricolage Grotesque',sans-serif;
+  --sans:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6vh 4vw}
+.card{max-width:560px;text-align:center;border:1px solid var(--line);padding:8vh 6vw;background:oklch(0.19 0.025 350)}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(26px,4vw,38px);margin-bottom:16px}
+p{color:var(--muted);font-size:15px;margin-bottom:8px}
+.product{font-family:var(--mono);font-size:13px;color:var(--ink);border:1px solid var(--line);display:inline-block;padding:6px 14px;margin:18px 0}
+a.back{display:inline-block;margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);
+  border:1px solid var(--line);padding:12px 22px;text-decoration:none}
+a.back:hover{border-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="tag">Mode démo</div>
+  <h1>Aucun paiement réel ici.</h1>
+  <p>The Rescue Squad est un projet fictif d'entraînement (Claude Code Club).</p>
+  <p>Ce bouton simule un checkout — il n'y a pas de vrai produit à livrer ni de vraie transaction.</p>
+  <div class="product" data-product>Produit —</div>
+  <div><a class="back" href="javascript:history.back()">← Retour à la page</a></div>
+</div>
+<script>
+  var p = new URLSearchParams(location.search).get('produit') || 'inconnu';
+  document.querySelector('[data-product]').textContent = 'Produit : ' + p;
+</script>
+</body>
+</html>

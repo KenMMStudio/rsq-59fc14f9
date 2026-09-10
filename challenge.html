@@ -284,6 +284,7 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
   </div>
 </div>
 
+<script src="form-config.js"></script>
 <script>
 (function(){
   try{ if(localStorage.getItem('rsq_cookie_choice')) return; }catch(e){}
@@ -307,9 +308,11 @@ if('IntersectionObserver' in window){
   els.forEach(function(el){ io.observe(el); });
 }
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mppzkedy';
+const FORM_CFG = window.RSQ_FORM_CONFIG || { mode:'demo', endpoints:{} };
+const FORMSPREE_ENDPOINT = FORM_CFG.endpoints.challenge || 'https://formspree.io/f/mppzkedy';
 
 document.querySelectorAll('[data-diag-form]').forEach(form=>{
+  const originalLabel = form.querySelector('button').textContent;
   form.addEventListener('submit', async (e)=>{
     e.preventDefault();
     const msg = form.parentElement.querySelector('[data-diag-msg]') || form.nextElementSibling;
@@ -321,23 +324,26 @@ document.querySelectorAll('[data-diag-form]').forEach(form=>{
     btn.textContent = 'Sending...';
 
     try{
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method:'POST',
-        headers:{'Accept':'application/json'},
-        body:new FormData(form)
-      });
-      if(res.ok){
-        form.style.display = 'none';
-        msg.textContent = "You're in — check your inbox for Day 1.";
-        msg.className = 'form-msg ok';
+      if(FORM_CFG.mode === 'demo'){
+        await new Promise(r => setTimeout(r, 500));
       } else {
-        throw new Error('bad response');
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method:'POST',
+          headers:{'Accept':'application/json'},
+          body:new FormData(form)
+        });
+        if(!res.ok) throw new Error('bad response');
       }
+      form.style.display = 'none';
+      msg.textContent = FORM_CFG.mode === 'demo'
+        ? "Thanks — demo mode: nothing was actually sent, but the form works."
+        : "You're in — check your inbox for Day 1.";
+      msg.className = 'form-msg ok';
     } catch(err){
       msg.textContent = "That didn't go through. Try again, or email us directly.";
       msg.className = 'form-msg err';
       btn.disabled = false;
-      btn.textContent = 'Join the free 7-day challenge';
+      btn.textContent = originalLabel;
     }
   });
 });

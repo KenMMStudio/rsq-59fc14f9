@@ -107,6 +107,21 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 .kititem b{display:block;font-family:var(--disp);font-weight:700;font-size:15px;margin-bottom:4px}
 .kititem span.d{font-size:14px;color:var(--muted)}
 
+/* Aperçus visuels — Rescue Scorecard & Rescue Paths, générés selon la charte, aucune donnée réelle */
+.previewrow{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-top:28px}
+.previewrow-rev .previewtext{order:2}
+.previewrow-rev .previewimg{order:1}
+.previewtext .n{font-family:var(--mono);color:var(--denim);font-size:13px;display:block;margin-bottom:6px}
+.previewtext b{display:block;font-family:var(--disp);font-weight:700;font-size:18px;margin-bottom:8px}
+.previewtext p.d{font-size:14px;color:var(--muted);margin:0}
+.previewimg{display:block;width:100%;max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.previewrow + .kitcard{margin-top:64px}
+@media(max-width:700px){
+  .previewrow{grid-template-columns:1fr;gap:24px;margin-top:24px}
+  .previewrow-rev .previewtext,
+  .previewrow-rev .previewimg{order:initial}
+}
+
 /* Scorecard pour/pas pour toi — coches ok / croix danger, strictement en contexte d'état */
 .scorecard{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:10px}
 .scorecard h3{font-family:var(--disp);font-weight:700;font-size:16px;margin-bottom:18px}
@@ -242,10 +257,26 @@ footer{padding:34px 4vw;text-align:center;border-top:1px solid var(--line);font-
     <div class="k reveal">Ce que tu reçois</div>
     <h2 class="reveal">Basé sur un vrai système. <em>Pas une devinette.</em></h2>
     <p class="section-lede reveal">Le diagnostic ne sort pas d'un chapeau — il vient du même Scorecard qui structure tout le protocole Rescue Squad. "Une liste de 500 personnes pertinentes peut être plus utile qu'une liste de 10 000 adresses déconnectées."</p>
+    <div class="previewrow reveal">
+      <div class="previewtext">
+        <span class="n">01</span>
+        <b>Ton score sur les 8 piliers réels</b>
+        <p class="d">Fondations de liste, qualité des abonnés, régularité, engagement, pertinence &amp; confiance, segmentation, parcours d'achat, hygiène de liste.</p>
+      </div>
+      <img class="previewimg" src="assets/rescue-scorecard-preview.png" alt="Aperçu illustratif du Rescue Scorecard, montrant les 8 piliers de diagnostic — pas une donnée client réelle" loading="lazy">
+    </div>
+
+    <div class="previewrow previewrow-rev reveal">
+      <div class="previewtext">
+        <span class="n">02</span>
+        <b>Ton chemin de sauvetage prioritaire</b>
+        <p class="d">Build, Warm, Revive ou Convert — un seul à la fois, pas les quatre en même temps.</p>
+      </div>
+      <img class="previewimg" src="assets/rescue-paths-preview.png" alt="Aperçu illustratif des quatre chemins de sauvetage : Build, Warm, Revive, Convert" loading="lazy">
+    </div>
+
     <div class="kitcard reveal">
-      <div class="bar">Ton diagnostic · affiché à l'écran</div>
-      <div class="kititem"><span class="n">01</span><div><b>Ton score sur les 8 piliers réels</b><span class="d">Fondations de liste, qualité des abonnés, régularité, engagement, pertinence & confiance, segmentation, parcours d'achat, hygiène de liste.</span></div></div>
-      <div class="kititem"><span class="n">02</span><div><b>Ton chemin de sauvetage prioritaire</b><span class="d">Build, Warm, Revive ou Convert — un seul à la fois, pas les quatre en même temps.</span></div></div>
+      <div class="bar">Aussi inclus · affiché à l'écran</div>
       <div class="kititem"><span class="n">03</span><div><b>La cause la plus probable</b><span class="d">Identifiée noir sur blanc, pas une supposition.</span></div></div>
       <div class="kititem"><span class="n">04</span><div><b>Un lien vers le protocole complet</b><span class="d">Si tu veux aller plus loin — sans obligation.</span></div></div>
     </div>

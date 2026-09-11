@@ -102,6 +102,21 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 .kititem b{display:block;font-family:var(--disp);font-weight:700;font-size:15px;margin-bottom:4px}
 .kititem span.d{font-size:14px;color:var(--muted)}
 
+/* Illustrative previews — Rescue Scorecard & Rescue Paths, generated per the brand charte, no real data */
+.previewrow{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-top:28px}
+.previewrow-rev .previewtext{order:2}
+.previewrow-rev .previewimg{order:1}
+.previewtext .n{font-family:var(--mono);color:var(--denim);font-size:13px;display:block;margin-bottom:6px}
+.previewtext b{display:block;font-family:var(--disp);font-weight:700;font-size:18px;margin-bottom:8px}
+.previewtext p.d{font-size:14px;color:var(--muted);margin:0}
+.previewimg{display:block;width:100%;max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.previewrow + .kitcard{margin-top:64px}
+@media(max-width:700px){
+  .previewrow{grid-template-columns:1fr;gap:24px;margin-top:24px}
+  .previewrow-rev .previewtext,
+  .previewrow-rev .previewimg{order:initial}
+}
+
 .scorecard{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:10px}
 .scorecard h3{font-family:var(--disp);font-weight:700;font-size:16px;margin-bottom:18px}
 .scorecard ul{list-style:none;display:flex;flex-direction:column;gap:14px}
@@ -223,10 +238,26 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
     <div class="k reveal">What you get</div>
     <h2 class="reveal">Based on a real system. <em>Not a guess.</em></h2>
     <p class="section-lede reveal">The diagnosis isn't pulled out of thin air — it comes from the same Scorecard that structures the whole Rescue Squad protocol. "A list of 500 relevant people can be more useful than a list of 10,000 disconnected addresses."</p>
+    <div class="previewrow reveal">
+      <div class="previewtext">
+        <span class="n">01</span>
+        <b>Your score across the 8 real pillars</b>
+        <p class="d">List foundation, subscriber quality, consistency, engagement, relevance &amp; trust, segmentation, buyer path, list hygiene.</p>
+      </div>
+      <img class="previewimg" src="../assets/rescue-scorecard-preview.png" alt="Illustrative preview of the Rescue Scorecard, showing the 8 diagnostic pillars — not real client data" loading="lazy">
+    </div>
+
+    <div class="previewrow previewrow-rev reveal">
+      <div class="previewtext">
+        <span class="n">02</span>
+        <b>Your priority Rescue Path</b>
+        <p class="d">Build, Warm, Revive, or Convert — one at a time, not all four at once.</p>
+      </div>
+      <img class="previewimg" src="../assets/rescue-paths-preview.png" alt="Illustrative preview of the four Rescue Paths: Build, Warm, Revive, Convert" loading="lazy">
+    </div>
+
     <div class="kitcard reveal">
-      <div class="bar">Your diagnosis · shown on screen</div>
-      <div class="kititem"><span class="n">01</span><div><b>Your score across the 8 real pillars</b><span class="d">List foundation, subscriber quality, consistency, engagement, relevance & trust, segmentation, buyer path, list hygiene.</span></div></div>
-      <div class="kititem"><span class="n">02</span><div><b>Your priority Rescue Path</b><span class="d">Build, Warm, Revive, or Convert — one at a time, not all four at once.</span></div></div>
+      <div class="bar">Also included · shown on screen</div>
       <div class="kititem"><span class="n">03</span><div><b>The most likely cause</b><span class="d">Named in plain terms, not a guess.</span></div></div>
       <div class="kititem"><span class="n">04</span><div><b>A link to the full protocol</b><span class="d">If you want to go further — no obligation.</span></div></div>
     </div>

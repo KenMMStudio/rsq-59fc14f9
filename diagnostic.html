@@ -94,20 +94,20 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 
 .testimonials{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.testimonial{background:var(--paper);border:1px solid var(--line);padding:24px}
+.testimonial{background:var(--paper);border:1px solid var(--line);padding:24px;box-shadow:0 4px 14px rgba(35,27,27,.07)}
 .testimonial-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .testimonial-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid var(--line);display:block}
-.testimonial blockquote{font-family:var(--disp);font-size:18px;line-height:1.25;margin:0}
+.testimonial blockquote{font-family:var(--disp);font-weight:500;font-size:18px;line-height:1.25;margin:0}
 .testimonial cite{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--denim);font-style:normal}
 @media(max-width:700px){.testimonial-grid{grid-template-columns:1fr}}
 
 /* Callout — le test des 1000 en plus */
-.testbox{margin-top:32px;background:var(--paper);border:2px solid var(--denim);padding:26px 28px;max-width:70ch}
+.testbox{margin-top:32px;background:var(--paper);border:2px solid var(--denim);padding:26px 28px;max-width:70ch;box-shadow:0 4px 14px rgba(35,27,27,.07)}
 .testbox .tb-k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--denim);margin-bottom:10px}
 .testbox p{font-size:15px;color:var(--ink);margin:0}
 
 /* kit-list — "ce que tu reçois", fond paper, bordure denim (adapté de fe.html) */
-.kitcard{background:var(--paper);border:2px solid var(--denim);margin-top:10px}
+.kitcard{background:var(--paper);border:2px solid var(--denim);margin-top:10px;box-shadow:0 4px 14px rgba(35,27,27,.07)}
 .kitcard .bar{padding:14px 20px;border-bottom:2px solid var(--denim);font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--denim)}
 .kititem{display:flex;gap:16px;padding:22px 20px;border-bottom:1px solid var(--line)}
 .kititem:last-child{border-bottom:none}
@@ -122,7 +122,7 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 .previewtext .n{font-family:var(--mono);color:var(--denim);font-size:13px;display:block;margin-bottom:6px}
 .previewtext b{display:block;font-family:var(--disp);font-weight:700;font-size:18px;margin-bottom:8px}
 .previewtext p.d{font-size:14px;color:var(--muted);margin:0}
-.previewimg{display:block;width:100%;max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.previewimg{display:block;width:100%;max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line);box-shadow:0 4px 14px rgba(35,27,27,.07)}
 .previewrow + .previewrow{margin-top:36px}
 .previewrow + .kitcard{margin-top:36px}
 @media(max-width:700px){

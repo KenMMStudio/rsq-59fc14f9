@@ -51,7 +51,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 4
 .btn-sticker:hover::after{opacity:1;transform:scale(1) rotate(0deg)}
 
 .hero{padding:9vh 4vw 8vh;max-width:1180px;margin:0 auto}
-.eye{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:18px}
+.eye{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--denim);margin-bottom:18px}
 h1{font-family:var(--disp);font-weight:800;font-size:clamp(34px,6vw,72px);line-height:1.08;letter-spacing:-.02em;max-width:820px}
 .lede{margin-top:20px;max-width:520px;font-size:17px;color:var(--muted)}
 
@@ -72,29 +72,37 @@ h1{font-family:var(--disp);font-weight:800;font-size:clamp(34px,6vw,72px);line-h
 
 section{padding:9vh 4vw}
 .wrap{max-width:1180px;margin:0 auto}
-.k{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:18px}
+.k{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--denim);margin-bottom:18px}
 h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line-height:1.06;letter-spacing:-.01em;margin-bottom:14px;max-width:22ch}
 .section-lede{max-width:60ch;color:var(--muted);font-size:16px;margin-bottom:44px}
 
 
 .exhibits{border-top:1px solid var(--line)}
 .exhibit{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}
-.exhibit .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hot)}
+.exhibit .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--denim)}
 .exhibit .eh{font-family:var(--disp);font-weight:700;font-size:18px;margin-bottom:6px}
 .exhibit .ed{font-size:14px;color:var(--muted);max-width:56ch}
 @media(max-width:640px){.exhibit{grid-template-columns:1fr;gap:8px}}
 
 .blocdiag{background:var(--paper);color:var(--ink);text-align:center;padding:12vh 4vw;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.blocdiag .k{color:var(--hot)}
+.blocdiag .k{color:var(--denim)}
 .blocdiag .cap{margin:0 auto;max-width:58ch;font-size:17px;color:var(--ink)}
 .blocdiag .cap b{color:var(--hot);font-weight:600}
 .blocdiag .src{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.testimonials{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial{background:var(--paper);border:1px solid var(--line);padding:24px;box-shadow:0 4px 14px rgba(35,27,27,.07)}
+.testimonial-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.testimonial-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid var(--line);display:block}
+.testimonial blockquote{font-family:var(--disp);font-weight:500;font-size:18px;line-height:1.25;margin:0}
+.testimonial cite{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--denim);font-style:normal}
+@media(max-width:700px){.testimonial-grid{grid-template-columns:1fr}}
 
-.testbox{margin-top:32px;background:var(--paper);border:2px solid var(--denim);padding:26px 28px;max-width:70ch}
+.testbox{margin-top:32px;background:var(--paper);border:2px solid var(--denim);padding:26px 28px;max-width:70ch;box-shadow:0 4px 14px rgba(35,27,27,.07)}
 .testbox .tb-k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--denim);margin-bottom:10px}
 .testbox p{font-size:15px;color:var(--ink);margin:0}
 
-.kitcard{background:var(--paper);border:2px solid var(--denim);margin-top:10px}
+.kitcard{background:var(--paper);border:2px solid var(--denim);margin-top:10px;box-shadow:0 4px 14px rgba(35,27,27,.07)}
 .kitcard .bar{padding:14px 20px;border-bottom:2px solid var(--denim);font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--denim)}
 .kititem{display:flex;gap:16px;padding:22px 20px;border-bottom:1px solid var(--line)}
 .kititem:last-child{border-bottom:none}
@@ -109,8 +117,12 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 .previewtext .n{font-family:var(--mono);color:var(--denim);font-size:13px;display:block;margin-bottom:6px}
 .previewtext b{display:block;font-family:var(--disp);font-weight:700;font-size:18px;margin-bottom:8px}
 .previewtext p.d{font-size:14px;color:var(--muted);margin:0}
-.previewimg{display:block;width:100%;max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
-.previewrow + .kitcard{margin-top:64px}
+.previewimg{display:block;width:100%;max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line);box-shadow:0 4px 14px rgba(35,27,27,.07)}
+.previewrow + .previewrow{margin-top:36px}
+.previewrow + .kitcard{margin-top:36px}
+.closingnudge{text-align:center;padding:8vh 4vw;border-top:1px solid var(--line)}
+.closingnudge p{color:var(--muted);font-size:15px}
+.closingnudge a{color:var(--denim);text-decoration:underline}
 @media(max-width:700px){
   .previewrow{grid-template-columns:1fr;gap:24px;margin-top:24px}
   .previewrow-rev .previewtext,
@@ -127,7 +139,7 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 
 .steps{border-top:1px solid var(--line)}
 .step{display:grid;grid-template-columns:60px 200px 1fr;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
-.step .sn{font-family:var(--mono);font-size:12px;color:var(--hot)}
+.step .sn{font-family:var(--mono);font-size:12px;color:var(--denim)}
 .step .sh{font-family:var(--disp);font-weight:700;font-size:18px;text-transform:uppercase}
 .step p{font-size:14px;color:var(--muted);margin:0}
 @media(max-width:700px){.step{grid-template-columns:1fr}}
@@ -161,7 +173,7 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
   background:none;border:none;cursor:pointer;padding:8px 0}
 .quiz-back:disabled{opacity:0;pointer-events:none}
 .quiz-result{text-align:center}
-.quiz-result .rk{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:10px}
+.quiz-result .rk{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--denim);margin-bottom:10px}
 .quiz-result .path{font-family:var(--disp);font-weight:800;font-size:clamp(32px,6vw,56px);color:var(--ink);margin:6px 0 4px;letter-spacing:-.02em}
 .quiz-result .pathdesc{color:var(--muted);font-size:15px;max-width:46ch;margin:0 auto 30px}
 .quiz-result .diag-form{justify-content:center}
@@ -188,13 +200,12 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
 <div class="topbar">Free diagnosis, real protocol — not a course to buy.</div>
 
 <nav>
-  <a class="brand" href="index.html" style="text-decoration:none">THE RESCUE SQUAD<span class="dot"> ·</span> FREE DIAGNOSIS</a>
+  <a class="brand" href="index.html" style="text-decoration:none">THE RESCUE SQUAD<span class="dot"> ·</span> EMAIL LIST RESCUE KIT</a>
   <div class="navright sitelinks">
     <a href="index.html">Home</a>
+    <a href="index.html#kit">The kit</a>
+    <a href="diagnostic.html">Diagnosis</a>
     <a href="../challenge.html">Challenge</a>
-    <a href="fe.html">FE</a>
-    <a href="pro.html">Pro</a>
-    <a href="vault.html">Vault</a>
     <a href="../skool.html">Skool</a>
     <a class="lang" href="../diagnostic.html">FR</a>
     <a class="btn-sticker small" href="#quiz">Start</a>
@@ -223,111 +234,6 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
     <div class="testbox reveal">
       <div class="tb-k">The 1,000-more test</div>
       <p>If you added 1,000 people identical to the ones already on your list, would that solve your problem? If the answer is no, it isn't size — it's the system.</p>
-    </div>
-  </div>
-</section>
-
-<section class="blocdiag">
-  <div class="k reveal">What this protocol has already done</div>
-  <p class="cap reveal">A course creator with 40,000 subscribers, ready to start over from zero. One afternoon of diagnosis, a 14-day protocol, zero contacts deleted — open rate went from <b>0.8% to 22%</b> with no list purge.</p>
-  <div class="src">The Rescue Squad · fictional illustration example, no real client</div>
-</section>
-
-<section id="whatsinside">
-  <div class="wrap">
-    <div class="k reveal">What you get</div>
-    <h2 class="reveal">Based on a real system. <em>Not a guess.</em></h2>
-    <p class="section-lede reveal">The diagnosis isn't pulled out of thin air — it comes from the same Scorecard that structures the whole Rescue Squad protocol. "A list of 500 relevant people can be more useful than a list of 10,000 disconnected addresses."</p>
-    <div class="previewrow reveal">
-      <div class="previewtext">
-        <span class="n">01</span>
-        <b>Your score across the 8 real pillars</b>
-        <p class="d">List foundation, subscriber quality, consistency, engagement, relevance &amp; trust, segmentation, buyer path, list hygiene.</p>
-      </div>
-      <img class="previewimg" src="../assets/rescue-scorecard-preview.png" alt="Illustrative preview of the Rescue Scorecard, showing the 8 diagnostic pillars — not real client data" loading="lazy">
-    </div>
-
-    <div class="previewrow previewrow-rev reveal">
-      <div class="previewtext">
-        <span class="n">02</span>
-        <b>Your priority Rescue Path</b>
-        <p class="d">Build, Warm, Revive, or Convert — one at a time, not all four at once.</p>
-      </div>
-      <img class="previewimg" src="../assets/rescue-paths-preview.png" alt="Illustrative preview of the four Rescue Paths: Build, Warm, Revive, Convert" loading="lazy">
-    </div>
-
-    <div class="kitcard reveal">
-      <div class="bar">Also included · shown on screen</div>
-      <div class="kititem"><span class="n">03</span><div><b>The most likely cause</b><span class="d">Named in plain terms, not a guess.</span></div></div>
-      <div class="kititem"><span class="n">04</span><div><b>A link to the full protocol</b><span class="d">If you want to go further — no obligation.</span></div></div>
-    </div>
-    <div class="steps reveal" style="margin-top:36px">
-      <div class="step"><span class="sn">Build</span><span class="sh">Attract</span><p>The right people, not just more of them.</p></div>
-      <div class="step"><span class="sn">Warm</span><span class="sh">Reconnect</span><p>Rebuild the relationship after the silence.</p></div>
-      <div class="step"><span class="sn">Revive</span><span class="sh">Re-engage</span><p>Bring a cold list back into the conversation.</p></div>
-      <div class="step"><span class="sn">Convert</span><span class="sh">Sell clearly</span><p>Make the path to purchase obvious.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="how">
-  <div class="wrap">
-    <div class="k reveal">How it works</div>
-    <h2 class="reveal">Three steps. <em>No guessing.</em></h2>
-    <div class="steps reveal">
-      <div class="step"><span class="sn">01</span><span class="sh">Answer</span><p>6 quick questions about your list — no technical knowledge needed.</p></div>
-      <div class="step"><span class="sn">02</span><span class="sh">See it</span><p>Your diagnosis shows up on screen: what's actually wrong, in plain English.</p></div>
-      <div class="step"><span class="sn">03</span><span class="sh">Fix, in order</span><p>The exact sequence to run — not a pile of tips to sort through yourself.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="scorecard">
-  <div class="wrap">
-    <div class="k reveal">Before you start</div>
-    <h2 class="reveal">This diagnosis is for you <em>if...</em></h2>
-    <div class="scorecard reveal">
-      <div class="yes">
-        <h3>It's for you if</h3>
-        <ul>
-          <li>You have a list of 500 to 50,000 contacts</li>
-          <li>You've stopped emailing for months</li>
-          <li>You don't know where to start again</li>
-        </ul>
-      </div>
-      <div class="no">
-        <h3>Not for you if</h3>
-        <ul>
-          <li>You don't have a list yet</li>
-          <li>You want a fix in under 24 hours</li>
-          <li>You just want more volume, not a diagnosis</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap">
-    <div class="k reveal">Before you start</div>
-    <h2 class="reveal">Questions worth asking.</h2>
-    <div class="faq reveal">
-      <details name="faq">
-        <summary>I'm not technical — will this be hard to follow?</summary>
-        <p class="fa">No. The diagnosis reads in 3 minutes, written for a human, not a developer. No software, no dashboard to learn.</p>
-      </details>
-      <details name="faq">
-        <summary>Will this get me flagged as spam?</summary>
-        <p class="fa">You're not sending anything to your list here — this only asks you 6 questions and shows your diagnosis on screen. Your email only matters if you want us to follow up with the Rescue Kit link.</p>
-      </details>
-      <details name="faq">
-        <summary>What happens after I get my diagnosis?</summary>
-        <p class="fa">You'll know exactly where your list stands and the order to fix it in. If you want the full 30-day protocol to run it step by step, that's the Rescue Kit ($10) — no pressure either way.</p>
-      </details>
-      <details name="faq">
-        <summary>Can I redo the diagnosis later if my list changes?</summary>
-        <p class="fa">Yes. The diagnosis reflects your list's state at the moment you answer — run it again anytime.</p>
-      </details>
     </div>
   </div>
 </section>
@@ -428,41 +334,125 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.8vw,46px);line
   </div>
 </section>
 
+<section class="blocdiag">
+  <div class="k reveal">What this protocol has already done</div>
+  <p class="cap reveal">A course creator with 40,000 subscribers, ready to start over from zero. One afternoon of diagnosis, a 14-day protocol, zero contacts deleted — open rate went from <b>0.8% to 22%</b> with no list purge.</p>
+  <div class="src">The Rescue Squad · fictional illustration example, no real client</div>
+</section>
+
+<section class="testimonials">
+  <div class="wrap">
+    <div class="k reveal">Creator perspectives · training project</div>
+    <h2 class="reveal">What the process makes <em>clearer.</em></h2>
+    <div class="testimonial-grid reveal">
+      <article class="testimonial"><div class="testimonial-head"><img class="testimonial-avatar" src="assets/testimonial-creator-01.png" alt="Portrait of Dillin M."><cite>Dillin M.</cite></div><blockquote>“I kept rewriting emails when the real problem was that my list had gone quiet. The diagnosis helped me see the next step instead of trying five fixes at once.”</blockquote></article>
+      <article class="testimonial"><div class="testimonial-head"><img class="testimonial-avatar" src="assets/testimonial-creator-02.png" alt="Portrait of Laury S."><cite>Laury S.</cite></div><blockquote>“Once I separated acquisition from re-engagement, the plan finally felt manageable. I knew what to work on this week.”</blockquote></article>
+      <article class="testimonial"><div class="testimonial-head"><img class="testimonial-avatar" src="assets/testimonial-creator-03.png" alt="Portrait of Lisa G."><cite>Lisa G.</cite></div><blockquote>“The scorecard didn’t just tell me that something was wrong. It showed me which part of the path I needed to examine first.”</blockquote></article>
+    </div>
+  </div>
+</section>
+
+<section id="whatsinside">
+  <div class="wrap">
+    <div class="k reveal">What you get</div>
+    <h2 class="reveal">Based on a real system. <em>Not a guess.</em></h2>
+    <p class="section-lede reveal">The diagnosis isn't pulled out of thin air — it comes from the same Scorecard that structures the whole Rescue Squad protocol. "A list of 500 relevant people can be more useful than a list of 10,000 disconnected addresses."</p>
+    <div class="previewrow reveal">
+      <div class="previewtext">
+        <span class="n">01</span>
+        <b>Your score across the 8 real pillars</b>
+        <p class="d">List foundation, subscriber quality, consistency, engagement, relevance &amp; trust, segmentation, buyer path, list hygiene.</p>
+      </div>
+      <img class="previewimg" src="../assets/rescue-scorecard-preview.png" alt="Illustrative preview of the Rescue Scorecard, showing the 8 diagnostic pillars — not real client data" loading="lazy">
+    </div>
+
+    <div class="previewrow previewrow-rev reveal">
+      <div class="previewtext">
+        <span class="n">02</span>
+        <b>Your priority Rescue Path</b>
+        <p class="d">Build, Warm, Revive, or Convert — one at a time, not all four at once.</p>
+      </div>
+      <img class="previewimg" src="../assets/rescue-paths-preview.png" alt="Illustrative preview of the four Rescue Paths: Build, Warm, Revive, Convert" loading="lazy">
+    </div>
+
+    <div class="kitcard reveal">
+      <div class="bar">Also included · shown on screen</div>
+      <div class="kititem"><span class="n">03</span><div><b>The most likely cause</b><span class="d">Named in plain terms, not a guess.</span></div></div>
+      <div class="kititem"><span class="n">04</span><div><b>A link to the full protocol</b><span class="d">If you want to go further — no obligation.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="scorecard">
+  <div class="wrap">
+    <div class="k reveal">Before you start</div>
+    <h2 class="reveal">This diagnosis is for you <em>if...</em></h2>
+    <div class="scorecard reveal">
+      <div class="yes">
+        <h3>It's for you if</h3>
+        <ul>
+          <li>You have a list of 500 to 50,000 contacts</li>
+          <li>You've stopped emailing for months</li>
+          <li>You don't know where to start again</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h3>Not for you if</h3>
+        <ul>
+          <li>You don't have a list yet</li>
+          <li>You want a fix in under 24 hours</li>
+          <li>You just want more volume, not a diagnosis</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="k reveal">Before you start</div>
+    <h2 class="reveal">Questions worth asking.</h2>
+    <div class="faq reveal">
+      <details name="faq">
+        <summary>I'm not technical — will this be hard to follow?</summary>
+        <p class="fa">No. The diagnosis reads in 3 minutes, written for a human, not a developer. No software, no dashboard to learn.</p>
+      </details>
+      <details name="faq">
+        <summary>Will this get me flagged as spam?</summary>
+        <p class="fa">You're not sending anything to your list here — this only asks you 6 questions and shows your diagnosis on screen. Your email only matters if you want us to follow up with the Rescue Kit link.</p>
+      </details>
+      <details name="faq">
+        <summary>What happens after I get my diagnosis?</summary>
+        <p class="fa">You'll know exactly where your list stands and the order to fix it in. If you want the full 30-day protocol to run it step by step, that's the Rescue Kit ($10) — no pressure either way.</p>
+      </details>
+      <details name="faq">
+        <summary>Can I redo the diagnosis later if my list changes?</summary>
+        <p class="fa">Yes. The diagnosis reflects your list's state at the moment you answer — run it again anytime.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="closingnudge">
+  <p>Haven't taken the diagnosis yet? <a href="#quiz">Scroll up to answer the 6 questions</a> — it takes 2 minutes.</p>
+</section>
+
 <footer class="footgood">
   <div class="footwrap">
     <div class="footbrand">the rescue squad_ · free diagnosis</div>
     <div class="sitelinks">
       <a href="index.html">Home</a>
+      <a href="index.html#kit">The kit</a>
+      <a href="diagnostic.html">Diagnosis</a>
       <a href="../challenge.html">Challenge</a>
-      <a href="fe.html">FE</a>
-      <a href="pro.html">Pro</a>
-      <a href="vault.html">Vault</a>
       <a href="../skool.html">Skool</a>
     </div>
     <div class="footnote">fictional training project · Claude Code Club · no real payment</div>
   </div>
 </footer>
 
-<div class="cookiebar" id="cookiebar" hidden>
-  <p>This demo stores your choice locally. No tracking is active.</p>
-  <div class="cookiebtns">
-    <button class="btn-outline" id="cookieDecline">Decline</button>
-    <button class="btn-sticker small" id="cookieAccept">Accept</button>
-  </div>
-</div>
-
 <script src="../form-config.js"></script>
-<script>
-(function(){
-  try{ if(localStorage.getItem('rsq_cookie_choice')) return; }catch(e){}
-  var bar = document.getElementById('cookiebar');
-  if(!bar) return;
-  bar.hidden = false;
-  function choose(v){ try{ localStorage.setItem('rsq_cookie_choice', v); }catch(e){} bar.hidden = true; }
-  document.getElementById('cookieAccept').addEventListener('click', function(){ choose('accepted'); });
-  document.getElementById('cookieDecline').addEventListener('click', function(){ choose('declined'); });
-})();
-</script>
+<script src="../cookie-consent.js"></script>
 <script>
 const PATH_INFO = {
   build:   { name: 'Build',   headline: 'Attract',       desc: "The right people, not just more of them. That's the path to treat first — the Rescue Kit breaks it down step by step." },
